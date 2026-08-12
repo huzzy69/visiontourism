@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --racing-green-rgb: 9, 46, 32;
+    --gold-rgb: 197, 168, 128;
+    --cream-rgb: 250, 249, 246;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-brand-cream-100 text-slate-800;
+  }
+
+  /* Premium scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-brand-cream-200;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-brand-green-500 rounded-md border-2 border-solid border-brand-cream-100;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-brand-green-600;
+  }
+
+  /* Custom text selection */
+  ::selection {
+    background-color: rgba(197, 168, 128, 0.4);
+    color: #092E20;
+  }
+}
+
+@layer components {
+  /* Premium Glassmorphism Card styling */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+  }
+
+  .glass-card-dark {
+    background: rgba(11, 15, 25, 0.8);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  /* Luxury Link under-animation */
+  .premium-link {
+    @apply relative py-1 text-sm font-medium tracking-wide transition-colors duration-300;
+  }
+
+  .premium-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-[2px] bg-brand-gold-400 transition-all duration-300 ease-out;
+  }
+
+  .premium-link:hover::after {
+    @apply w-full;
+  }
+
+  /* Smooth interactive hover transitions */
+  .hover-lift {
+    @apply transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg;
+  }
+}
+
+/* Reduced motion fallbacks */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+  }
+}

@@ -4,9 +4,10 @@
 
 @layer base {
   :root {
-    --racing-green-rgb: 9, 46, 32;
-    --gold-rgb: 197, 168, 128;
-    --cream-rgb: 250, 249, 246;
+    --brand-blue: #1E3A8A;
+    --brand-red: #DC2626;
+    --brand-white: #FFFFFF;
+    --brand-dark: #0F172A;
   }
 
   html {
@@ -17,80 +18,77 @@
   }
 
   body {
-    @apply bg-brand-cream-100 text-slate-800;
+    @apply bg-brand-neutral-100 text-slate-900 font-sans;
   }
 
-  /* Premium scrollbar styling */
+  /* Custom scrollbar matching logo navy & red */
   ::-webkit-scrollbar {
     width: 10px;
   }
   ::-webkit-scrollbar-track {
-    @apply bg-brand-cream-200;
+    @apply bg-slate-100;
   }
   ::-webkit-scrollbar-thumb {
-    @apply bg-brand-green-500 rounded-md border-2 border-solid border-brand-cream-100;
+    @apply bg-brand-blue-900 rounded border-2 border-solid border-white;
   }
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-brand-green-600;
+    @apply bg-brand-red-600;
   }
 
-  /* Custom text selection */
+  /* Text selection */
   ::selection {
-    background-color: rgba(197, 168, 128, 0.4);
-    color: #092E20;
+    background-color: rgba(220, 38, 38, 0.25);
+    color: #1E3A8A;
   }
 }
 
 @layer components {
-  /* Premium Glassmorphism Card styling */
+  /* Logo-inspired curved swoosh accent line */
+  .swoosh-accent-top {
+    border-top-left-radius: 50% 100%;
+    border-top-right-radius: 50% 100%;
+  }
+
+  /* Glassmorphism Card */
   .glass-card {
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(226, 232, 240, 0.8);
   }
 
   .glass-card-dark {
-    background: rgba(11, 15, 25, 0.8);
+    background: rgba(15, 23, 42, 0.95);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
 
-  /* Luxury Link under-animation */
-  .premium-link {
-    @apply relative py-1 text-sm font-medium tracking-wide transition-colors duration-300;
+  /* Link underline hover animation */
+  .brand-link {
+    @apply relative py-1 text-sm font-semibold tracking-wide transition-colors duration-300 text-brand-blue-900 hover:text-brand-red-600;
   }
 
-  .premium-link::after {
+  .brand-link::after {
     content: '';
-    @apply absolute bottom-0 left-0 w-0 h-[2px] bg-brand-gold-400 transition-all duration-300 ease-out;
+    @apply absolute bottom-0 left-0 w-0 h-[2px] bg-brand-red-600 transition-all duration-300 ease-out;
   }
 
-  .premium-link:hover::after {
+  .brand-link:hover::after {
     @apply w-full;
-  }
-
-  /* Smooth interactive hover transitions */
-  .hover-lift {
-    @apply transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg;
   }
 }
 
-/* Reduced motion fallbacks */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto !important;
   }
-  
   *,
   *::before,
   *::after {
     animation-delay: -1ms !important;
     animation-duration: 1ms !important;
     animation-iteration-count: 1 !important;
-    background-attachment: initial !important;
-    scroll-behavior: auto !important;
     transition-duration: 0s !important;
     transition-delay: 0s !important;
   }

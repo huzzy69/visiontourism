@@ -27,15 +27,15 @@ export const Testimonials: React.FC = () => {
   ];
 
   return (
-    <section className="bg-brand-cream-100 py-20">
+    <section className="bg-brand-neutral-100 py-20 border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Title */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-brand-gold-400 font-semibold tracking-[0.2em] text-xs uppercase block mb-1">
+          <span className="text-brand-red-600 font-bold tracking-[0.2em] text-xs uppercase block mb-1">
             Guest Feedback
           </span>
-          <h2 className="font-serif text-3xl md:text-4xl text-brand-green-900 font-bold">
+          <h2 className="font-serif text-3xl md:text-4xl text-brand-blue-900 font-extrabold">
             What Our Travelers Say
           </h2>
           <p className="text-slate-600 text-sm mt-4 leading-relaxed">
@@ -48,14 +48,14 @@ export const Testimonials: React.FC = () => {
           {reviews.map((r, idx) => (
             <div
               key={idx}
-              className="bg-white border border-brand-cream-300 p-8 rounded-sm shadow-sm relative flex flex-col justify-between group hover:shadow-xl hover:border-brand-gold-400/20 transition-all duration-300"
+              className="bg-white border border-slate-200 p-8 rounded shadow-sm relative flex flex-col justify-between group hover:shadow-xl hover:border-brand-red-600/30 transition-all duration-300"
             >
               {/* Quote Mark */}
-              <Quote className="w-10 h-10 text-brand-cream-300 absolute top-6 right-6 pointer-events-none" />
+              <Quote className="w-10 h-10 text-slate-200 absolute top-6 right-6 pointer-events-none" />
 
               <div>
                 {/* Rating stars */}
-                <div className="flex gap-1 mb-6 text-brand-gold-400">
+                <div className="flex gap-1 mb-6 text-brand-red-600">
                   {Array.from({ length: r.rating }).map((_, i) => (
                     <Star key={i} className="w-4 h-4 fill-current" />
                   ))}
@@ -67,14 +67,14 @@ export const Testimonials: React.FC = () => {
               </div>
 
               {/* Author Info */}
-              <div className="border-t border-brand-cream-200 pt-5 flex flex-col">
-                <span className="font-serif text-sm font-bold text-brand-green-900">
+              <div className="border-t border-slate-100 pt-4 flex flex-col">
+                <span className="font-serif text-sm font-bold text-brand-blue-900">
                   {r.author}
                 </span>
-                <span className="text-[10px] text-brand-gold-500 font-medium uppercase mt-0.5">
+                <span className="text-[10px] text-brand-red-600 font-bold uppercase mt-0.5">
                   {r.origin}
                 </span>
-                <span className="text-[9px] text-slate-400 mt-2 block font-medium">
+                <span className="text-[9px] text-slate-400 mt-1 block font-medium">
                   Trip: {r.trip}
                 </span>
               </div>

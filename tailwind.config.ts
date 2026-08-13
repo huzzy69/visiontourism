@@ -9,69 +9,49 @@ export default {
     extend: {
       colors: {
         brand: {
-          green: {
-            50: '#f2f8f5',
-            100: '#e1ede6',
-            200: '#c5dbce',
-            300: '#9cbdac',
-            400: '#6d9982',
-            500: '#092E20', // Classic British Racing Green Medium
-            600: '#004225', // Deep British Racing Green
-            700: '#06261b', // Ultra Deep Forest
-            800: '#041d14',
-            900: '#02120d',
+          blue: {
+            50: '#eff6ff',
+            100: '#dbeafe',
+            200: '#bfdbfe',
+            300: '#93c5fd',
+            400: '#60a5fa',
+            500: '#3b82f6',
+            600: '#2563eb',
+            700: '#1d4ed8',
+            800: '#1e40af',
+            900: '#1e3a8a', // Official Deep Royal/Navy Blue
+            950: '#0f172a', // Dark Navy Charcoal
           },
-          gold: {
-            50: '#faf8f5',
-            100: '#f4ede1',
-            200: '#e5d7be',
-            300: '#d1b993',
-            400: '#C5A880', // Premium Accent Gold
-            500: '#a7855b',
-            600: '#8f6e47',
-            700: '#755737',
-            800: '#5e432a',
-            900: '#4c3522',
+          red: {
+            50: '#fef2f2',
+            100: '#fee2e2',
+            200: '#fecaca',
+            300: '#fca5a5',
+            400: '#f87171',
+            500: '#ef4444',
+            600: '#dc2626', // Official Maps Tours Red
+            700: '#b91c1c',
+            800: '#991b1b',
+            900: '#7f1d1d',
           },
-          cream: {
+          neutral: {
             50: '#ffffff',
-            100: '#FAF9F6', // Off-white cream background
-            200: '#F5F2EB', // Warm sand cream
-            300: '#EAE5D9',
-          },
-          dark: {
-            900: '#0B0F19', // Deep dark overlay background
-            950: '#05070B', // Rich pitch black
+            100: '#f8fafc', // Light neutral background
+            200: '#f1f5f9', // Very light neutral
+            300: '#e2e8f0',
+            400: '#94a3b8',
+            800: '#1e293b',
+            900: '#0f172a',
           }
         }
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        serif: ['"Playfair Display"', 'Georgia', 'serif'],
-      },
-      animation: {
-        'fade-in': 'fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
-        'slide-up': 'slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
-        'pulse-subtle': 'pulseSubtle 2s infinite ease-in-out',
-      },
-      keyframes: {
-        fadeIn: {
-          '0%': { opacity: '0' },
-          '100%': { opacity: '1' },
-        },
-        slideUp: {
-          '0%': { opacity: '0', transform: 'translateY(20px)' },
-          '100%': { opacity: '1', transform: 'translateY(0)' },
-        },
-        pulseSubtle: {
-          '0%, 100%': { opacity: '1', transform: 'scale(1)' },
-          '50%': { opacity: '0.8', transform: 'scale(1.02)' },
-        }
+        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        serif: ['Inter', 'Georgia', 'serif'],
       },
       backgroundImage: {
-        'cinematic-gradient': 'linear-gradient(to bottom, rgba(11, 15, 25, 0.3), rgba(5, 7, 11, 0.95))',
-        'gold-gradient': 'linear-gradient(135deg, #C5A880 0%, #a7855b 100%)',
-        'green-gradient': 'linear-gradient(135deg, #092E20 0%, #004225 100%)',
+        'brand-gradient': 'linear-gradient(135deg, #1E3A8A 0%, #0F172A 100%)',
+        'red-gradient': 'linear-gradient(135deg, #DC2626 0%, #B91C1C 100%)',
       }
     },
   },

@@ -4,41 +4,41 @@ import { ShieldCheck, Sparkles, Map, HeartHandshake } from 'lucide-react';
 export const WhyChooseUs: React.FC = () => {
   const highlights = [
     {
-      icon: <ShieldCheck className="w-6 h-6 text-brand-gold-400" />,
+      icon: <ShieldCheck className="w-6 h-6 text-white" />,
       title: 'Fully Licensed Operator',
-      description: 'Acclaimed and fully certified under private hire operator licenses, guaranteeing adherence to strict safety standards.',
+      description: 'Fully accredited under London Private Hire regulations, guaranteeing compliance with UK safety standards.',
     },
     {
-      icon: <Sparkles className="w-6 h-6 text-brand-gold-400" />,
+      icon: <Sparkles className="w-6 h-6 text-white" />,
       title: 'Executive Fleet Comfort',
-      description: 'Ride in premium Mercedes-Benz executive minibuses and midi-coaches equipped with leather seats, climate control, and USB ports.',
+      description: 'Ride in executive Mercedes-Benz Sprinter minibuses and coaches with reclining leather seats, climate control, and USB chargers.',
     },
     {
-      icon: <Map className="w-6 h-6 text-brand-gold-400" />,
+      icon: <Map className="w-6 h-6 text-white" />,
       title: 'Bespoke Private Routes',
-      description: 'Completely customizable road trip speeds, rest stops, and destinations. Work with guides to build your dream schedule.',
+      description: 'Tailor your road trip speeds, rest stops, and stops. Work with personal driver-guides to build your ideal itinerary.',
     },
     {
-      icon: <HeartHandshake className="w-6 h-6 text-brand-gold-400" />,
+      icon: <HeartHandshake className="w-6 h-6 text-white" />,
       title: 'Direct Operator Value',
-      description: 'We own the vehicles and manage the guides directly. No third-party commissions or hidden broker fees.',
+      description: 'We own our vehicle fleet and manage local guides directly. No third-party agent commissions or hidden broker fees.',
     },
   ];
 
   return (
-    <section className="bg-brand-cream-100 py-20 relative overflow-hidden">
+    <section className="bg-brand-neutral-100 py-20 relative overflow-hidden border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Title */}
+        {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-brand-gold-400 font-semibold tracking-[0.2em] text-xs uppercase">
+          <span className="text-brand-red-600 font-bold tracking-[0.2em] text-xs uppercase block mb-1">
             Maps Tours Quality
           </span>
-          <h2 className="font-serif text-3xl md:text-4xl text-brand-green-900 font-bold mt-2">
+          <h2 className="font-serif text-3xl md:text-4xl text-brand-blue-900 font-extrabold">
             Why Discerning Groups Choose Us
           </h2>
           <p className="text-slate-600 mt-4 text-sm sm:text-base leading-relaxed">
-            Rebuilding travel standards across the United Kingdom. We combine transport logistics with historical storytelling to deliver outstanding journeys.
+            Rebuilding UK travel standards. We combine professional minibus logistics with rich British storytelling for outstanding journeys.
           </p>
         </div>
 
@@ -47,15 +47,15 @@ export const WhyChooseUs: React.FC = () => {
           {highlights.map((h, index) => (
             <div
               key={index}
-              className="bg-white border border-brand-cream-300 p-8 rounded-sm hover:shadow-xl hover:border-brand-gold-400/30 transition-all duration-300 flex flex-col items-start text-left hover:-translate-y-1"
+              className="bg-white border border-slate-200 p-8 rounded shadow-sm hover:shadow-md hover:border-brand-red-600/40 transition-all duration-300 flex flex-col items-start text-left hover:-translate-y-1"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-sm bg-brand-green-900 text-brand-gold-400 mb-6">
+              <div className="flex h-12 w-12 items-center justify-center rounded bg-brand-blue-900 text-white mb-6">
                 {h.icon}
               </div>
-              <h3 className="font-serif text-lg text-brand-green-900 font-bold mb-3">
+              <h3 className="font-serif text-lg text-brand-blue-900 font-bold mb-2.5">
                 {h.title}
               </h3>
-              <p className="text-slate-500 text-xs sm:text-sm leading-relaxed">
+              <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
                 {h.description}
               </p>
             </div>

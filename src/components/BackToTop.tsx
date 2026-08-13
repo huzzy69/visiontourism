@@ -34,7 +34,7 @@ export const BackToTop: React.FC = () => {
           exit={{ opacity: 0, scale: 0.8, y: 10 }}
           onClick={scrollToTop}
           aria-label="Back to top"
-          className="fixed bottom-8 right-8 z-40 flex h-12 w-12 items-center justify-center rounded-full border border-brand-gold-400/30 bg-brand-green-900/90 text-brand-gold-400 shadow-xl backdrop-blur-md transition-all duration-300 hover:bg-brand-green-600 hover:text-white"
+          className="fixed bottom-8 right-8 z-40 flex h-11 w-11 items-center justify-center rounded-full border border-slate-700 bg-brand-blue-900 text-white shadow-xl backdrop-blur-md transition-all duration-300 hover:bg-brand-red-600 hover:scale-105"
         >
           <ArrowUp className="h-5 w-5" />
         </motion.button>

@@ -4,30 +4,29 @@ import { destinations } from '../data/destinations';
 import { ArrowRight, Compass } from 'lucide-react';
 
 export const FeaturedDestinations: React.FC = () => {
-  // Show featured destinations
   const featuredDestinations = destinations.filter((d) => d.featured);
 
   return (
-    <section className="bg-brand-cream-100 py-20">
+    <section className="bg-brand-neutral-100 py-20 border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Title */}
         <div className="flex flex-col md:flex-row justify-between items-end gap-6 mb-16">
           <div className="max-w-xl">
-            <span className="text-brand-gold-400 font-semibold tracking-[0.2em] text-xs uppercase block mb-1">
-              Top Sightseeing
+            <span className="text-brand-red-600 font-bold tracking-[0.2em] text-xs uppercase block mb-1">
+              Famous Destinations
             </span>
-            <h2 className="font-serif text-3xl md:text-4xl text-brand-green-900 font-bold">
-              Featured UK Destinations
+            <h2 className="font-serif text-3xl md:text-4xl text-brand-blue-900 font-extrabold">
+              Featured UK Travel Sights
             </h2>
             <p className="text-slate-600 text-sm mt-3 leading-relaxed">
-              Explore historic royal capitals, dramatic volcanic highlands, and gorgeous rolling countrysides in the comfort of a private tour.
+              From Royal London to ancient Oxford colleges, Manchester heritage, Lake District valleys, and Edinburgh Castle.
             </p>
           </div>
           
           <Link
             to="/famous-sights"
-            className="flex items-center gap-2 text-brand-green-900 hover:text-brand-gold-500 text-sm font-bold transition-colors uppercase tracking-wider whitespace-nowrap"
+            className="flex items-center gap-2 text-brand-blue-900 hover:text-brand-red-600 text-xs font-bold transition-colors uppercase tracking-wider whitespace-nowrap"
           >
             Explore All Sights
             <ArrowRight className="w-4 h-4" />
@@ -35,37 +34,37 @@ export const FeaturedDestinations: React.FC = () => {
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {featuredDestinations.slice(0, 4).map((dest) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {featuredDestinations.map((dest) => (
             <div
               key={dest.id}
-              className="group relative h-80 rounded-sm overflow-hidden border border-brand-cream-300 hover:shadow-2xl transition-all duration-500"
+              className="group relative h-84 rounded overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-500 bg-white"
             >
-              {/* Image backdrop */}
+              {/* Image */}
               <div
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-700 group-hover:scale-105"
                 style={{ backgroundImage: `url('${dest.imageUrl}')` }}
               />
-              {/* Gradients */}
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-dark-900 via-brand-dark-900/30 to-transparent" />
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
               
               {/* Content Panel */}
               <div className="absolute inset-x-0 bottom-0 p-6 z-10 flex flex-col justify-end h-full">
-                <span className="text-[9px] font-bold text-brand-gold-400 uppercase tracking-widest block mb-1 flex items-center gap-1">
-                  <Compass className="w-3 h-3 text-brand-gold-400" />
+                <span className="text-[10px] font-bold text-white bg-brand-red-600 w-fit px-2 py-0.5 rounded uppercase tracking-wider block mb-2 flex items-center gap-1">
+                  <Compass className="w-3 h-3 text-white" />
                   {dest.region}
                 </span>
                 
-                <h3 className="font-serif text-lg text-white font-bold mb-2">
+                <h3 className="font-serif text-xl text-white font-bold mb-2">
                   {dest.name}
                 </h3>
                 
-                <p className="text-[11px] text-white/70 line-clamp-2 leading-relaxed opacity-0 group-hover:opacity-100 group-hover:translate-y-0 translate-y-2 transition-all duration-300">
-                  {dest.description}
+                <p className="text-xs text-slate-200 leading-relaxed opacity-95 mb-3 line-clamp-2">
+                  {dest.shortDescription}
                 </p>
 
-                <div className="border-t border-white/10 pt-3 mt-3 flex justify-between items-center text-[10px] uppercase font-bold text-brand-gold-400 tracking-wider">
-                  <span>Explore Route</span>
+                <div className="border-t border-white/20 pt-3 flex justify-between items-center text-[10px] uppercase font-bold text-white tracking-wider group-hover:text-brand-red-400 transition-colors">
+                  <span>Explore Location</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>

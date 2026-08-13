@@ -1,90 +1,139 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Compass, Calendar } from 'lucide-react';
+import { Compass, Calendar, ArrowRight, ShieldCheck, MapPin } from 'lucide-react';
+import { ThreeCanvas } from '../three/ThreeCanvas';
+import { useScrollPosition } from '../hooks/useScrollPosition';
 
 export const Hero: React.FC = () => {
+  const scrollY = useScrollPosition();
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  useEffect(() => {
+    const progress = Math.min(Math.max(scrollY / 750, 0), 1);
+    setScrollProgress(progress);
+  }, [scrollY]);
+
   return (
-    <section className="relative h-screen min-h-[650px] flex items-center justify-center overflow-hidden bg-brand-green-950">
-      {/* Background Image backdrop with high-end overlays */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-[12000ms] scale-105 hover:scale-100 opacity-35"
-        style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=1600&auto=format&fit=crop')`,
-        }}
-      />
+    <section className="relative min-h-[90vh] lg:min-h-screen flex items-center justify-center pt-28 pb-16 overflow-hidden bg-white text-slate-900">
+      {/* Light neutral background with subtle logo swoosh shape graphics */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e3a8a04_1px,transparent_1px),linear-gradient(to_bottom,#1e3a8a04_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none" />
       
-      {/* Cinematic dark gradients to mask contents and header */}
-      <div className="absolute inset-0 bg-gradient-to-t from-brand-dark-900 via-brand-green-900/40 to-brand-green-900/60" />
-      <div className="absolute inset-0 bg-gradient-to-b from-brand-dark-950/70 via-transparent to-brand-dark-900" />
-      
-      {/* Accent light ray */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-brand-gold-400/5 rounded-full blur-[120px] pointer-events-none" />
+      {/* Red & Blue swoosh gradient light rays */}
+      <div className="absolute top-10 left-10 w-[500px] h-[300px] bg-brand-red-600/5 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-10 right-10 w-[500px] h-[300px] bg-brand-blue-900/5 rounded-full blur-[140px] pointer-events-none" />
 
-      {/* Main Content */}
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center gap-6 mt-16">
-        
-        {/* Animated Subtitle Tag */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="inline-flex items-center gap-2 bg-brand-gold-400/10 text-brand-gold-400 border border-brand-gold-400/25 px-4.5 py-1.5 rounded-full text-xs font-bold tracking-[0.25em] uppercase shadow-sm"
-        >
-          <Compass className="w-4 h-4 text-brand-gold-400 animate-spin-slow" />
-          <span>Premium UK Group Tours & Rentals</span>
-        </motion.div>
-
-        {/* Big Cinematic Heading */}
-        <motion.h1
-          initial={{ opacity: 0, y: 25 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.15, duration: 1.0, ease: [0.16, 1, 0.3, 1] }}
-          className="font-serif text-4xl sm:text-6xl md:text-7xl font-bold text-white tracking-wide leading-[1.1] max-w-4xl"
-        >
-          Explore the UK.<br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold-400 to-brand-gold-300">
-            Travel Together.
-          </span><br />
-          Make Memories.
-        </motion.h1>
-
-        {/* Supporting description */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 0.8, y: 0 }}
-          transition={{ delay: 0.35, duration: 0.8 }}
-          className="text-white/90 text-base sm:text-lg md:text-xl font-light tracking-wide max-w-2xl mt-2 leading-relaxed"
-        >
-          Luxury minibus charters and private group road trips from England to Scotland. Crafted itineraries, professional driver-guides, and unmatched British hospitality.
-        </motion.p>
-
-        {/* Call to Actions */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.8 }}
-          className="flex flex-col sm:flex-row items-center gap-4 mt-6 w-full sm:w-auto"
-        >
-          <Link
-            to="/book"
-            className="flex items-center justify-center gap-2 bg-gradient-to-r from-brand-gold-400 to-brand-gold-500 hover:from-brand-gold-500 hover:to-brand-gold-600 text-brand-green-900 font-bold px-8 py-4 rounded-sm shadow-xl hover:shadow-brand-gold-400/20 transition-all duration-300 w-full sm:w-64 uppercase tracking-wider text-xs hover:-translate-y-0.5"
-          >
-            <Calendar className="w-4 h-4" />
-            Book Private Charter
-          </Link>
+      {/* Main Grid Container */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
-          <Link
-            to="/england-scotland-4-days"
-            className="flex items-center justify-center border border-white/20 hover:border-brand-gold-400 text-white bg-white/5 hover:bg-white/10 font-bold px-8 py-4 rounded-sm transition-all duration-300 w-full sm:w-64 uppercase tracking-wider text-xs hover:-translate-y-0.5"
-          >
-            Explore 4-Day Tour
-          </Link>
-        </motion.div>
-      </div>
+          {/* Left Column: Headlines & CTAs (5 cols) */}
+          <div className="lg:col-span-5 flex flex-col gap-6 text-left">
+            
+            {/* Tagline Badge */}
+            <motion.div
+              initial={{ opacity: 0, y: -15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7 }}
+              className="inline-flex items-center gap-2 bg-brand-red-50 border border-brand-red-200 px-4 py-1.5 rounded-full text-xs font-bold tracking-[0.15em] uppercase shadow-sm w-fit text-brand-red-600"
+            >
+              <Compass className="w-4 h-4 text-brand-red-600" />
+              <span>Official UK Travel & Rental</span>
+              <span className="w-1.5 h-1.5 rounded-full bg-brand-blue-900 inline-block ml-1" />
+            </motion.div>
 
-      {/* Elegant Bottom Curve Divider */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-brand-dark-900 to-transparent pointer-events-none" />
+            {/* Main Headline */}
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.15, duration: 0.8 }}
+              className="font-serif text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] text-brand-blue-900"
+            >
+              Explore the UK.<br />
+              <span className="text-brand-red-600">
+                Travel Together.
+              </span><br />
+              Make Memories.
+            </motion.h1>
+
+            {/* Supporting Subtitle */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 0.9, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.8 }}
+              className="text-slate-600 text-sm sm:text-base font-normal leading-relaxed max-w-lg"
+            >
+              Curated overland travel from London through Oxford, Manchester, the Lake District, Glasgow, and Edinburgh. Executive minibus charters with professional driver-guides.
+            </motion.p>
+
+            {/* City Stops Quick List */}
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.8 }}
+              className="flex flex-wrap items-center gap-2 text-[11px] uppercase font-bold text-slate-500 tracking-wider"
+            >
+              <MapPin className="w-3.5 h-3.5 text-brand-red-600" />
+              <span className="text-brand-blue-900">London</span>
+              <span>•</span>
+              <span className="text-brand-blue-900">Oxford</span>
+              <span>•</span>
+              <span className="text-brand-blue-900">Manchester</span>
+              <span>•</span>
+              <span className="text-brand-blue-900">Lake District</span>
+              <span>•</span>
+              <span className="text-brand-blue-900">Glasgow</span>
+              <span>•</span>
+              <span className="text-brand-blue-900">Edinburgh</span>
+            </motion.div>
+
+            {/* Call to Actions */}
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 0.8 }}
+              className="flex flex-col sm:flex-row items-center gap-4 mt-2"
+            >
+              {/* Primary CTA: Navy background, turns Red on hover */}
+              <Link
+                to="/book"
+                className="flex items-center justify-center gap-2 bg-brand-blue-900 hover:bg-brand-red-600 text-white font-bold px-7 py-3.5 rounded shadow-md transition-all duration-300 w-full sm:w-auto uppercase tracking-wider text-xs hover:-translate-y-0.5"
+              >
+                <Calendar className="w-4 h-4 text-white" />
+                Book Private Charter
+              </Link>
+              
+              {/* Secondary CTA: Red border, turns Red on hover */}
+              <Link
+                to="/england-scotland-4-days"
+                className="flex items-center justify-center gap-2 border-2 border-brand-red-600 text-brand-red-600 hover:bg-brand-red-600 hover:text-white font-bold px-7 py-3.5 rounded transition-all duration-300 w-full sm:w-auto uppercase tracking-wider text-xs hover:-translate-y-0.5 shadow-sm"
+              >
+                <span>Explore Route</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </motion.div>
+
+            {/* Operator Accreditation */}
+            <div className="flex items-center gap-2 text-xs text-slate-500 font-medium mt-2">
+              <ShieldCheck className="w-4.5 h-4.5 text-brand-blue-900" />
+              <span>Licensed UK Private Hire Operator</span>
+            </div>
+          </div>
+
+          {/* Right Column: 3D UK Map Canvas (7 cols) */}
+          <div className="lg:col-span-7 h-[460px] lg:h-[540px] relative">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.96 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2, duration: 0.8 }}
+              className="w-full h-full relative"
+            >
+              <ThreeCanvas scrollProgress={scrollProgress} />
+            </motion.div>
+          </div>
+
+        </div>
+      </div>
     </section>
   );
 };

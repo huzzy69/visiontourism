@@ -1,62 +1,88 @@
-import React, { useRef } from 'react';
+import React, { useState, useRef, useMemo } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { Line } from '@react-three/drei';
 import * as THREE from 'three';
-import { destinations } from '../data/destinations';
+
+// Geographically accurate coordinates corresponding to DestinationMarkers.tsx, slightly raised to Y=0.80
+const ROUTE_POINTS = [
+  new THREE.Vector3(0.50, 0.80, 0.92),     // London
+  new THREE.Vector3(0.15, 0.80, 0.80),     // Oxford
+  new THREE.Vector3(-0.25, 0.80, -0.28),   // Manchester
+  new THREE.Vector3(-0.42, 0.80, -0.70),   // Lake District
+  new THREE.Vector3(-0.65, 0.80, -1.35),   // Glasgow
+  new THREE.Vector3(-0.32, 0.80, -1.48),   // Edinburgh
+];
+
+export const getUKRouteCurve = (): THREE.CatmullRomCurve3 => {
+  return new THREE.CatmullRomCurve3(ROUTE_POINTS, false, 'catmullrom', 0.15);
+};
 
 export const RouteLines: React.FC = () => {
-  const lineMaterialRef = useRef<any>(null);
+  const curve = useMemo(() => getUKRouteCurve(), []);
+  
+  // High resolution points for a smooth 3D spline
+  const fullCurvePoints = useMemo(() => {
+    return curve.getPoints(120).map((v) => [v.x, v.y, v.z] as [number, number, number]);
+  }, [curve]);
 
-  // Extract coords of major points in sequence for the England to Scotland Route
-  // London -> Cotswolds -> Lake District -> Edinburgh -> Highlands
-  const routePointsSequence = ['london', 'cotswolds', 'lake-district', 'edinburgh', 'highlands'];
-  const points = routePointsSequence
-    .map((id) => {
-      const dest = destinations.find((d) => d.id === id);
-      return dest ? new THREE.Vector3(dest.coordinates.x, dest.coordinates.y, dest.coordinates.z + 0.05) : null;
-    })
-    .filter((v): v is THREE.Vector3 => v !== null);
+  const [visiblePoints, setVisiblePoints] = useState<[number, number, number][]>([]);
+  const progressRef = useRef(0);
+  const pauseTimerRef = useRef(0);
 
-  // Generate a smooth curve through the points
-  const curve = new THREE.CatmullRomCurve3(points);
-  const curvePoints = curve.getPoints(50).map((v) => [v.x, v.y, v.z] as [number, number, number]);
-
-  useFrame((state) => {
-    if (lineMaterialRef.current) {
-      // Animate dash offset to create the flow effect
-      lineMaterialRef.current.dashOffset = -state.clock.getElapsedTime() * 0.4;
+  useFrame((_, delta) => {
+    if (pauseTimerRef.current > 0) {
+      pauseTimerRef.current -= delta;
+      if (pauseTimerRef.current <= 0) {
+        progressRef.current = 0;
+        setVisiblePoints([]);
+      }
+      return;
     }
+
+    // Draw route over 3 seconds
+    progressRef.current += delta * 0.33;
+    if (progressRef.current >= 1.0) {
+      progressRef.current = 1.0;
+      pauseTimerRef.current = 2.0; // Pause for 2 seconds at Edinburgh before loop restarts
+    }
+
+    const count = Math.max(2, Math.ceil(fullCurvePoints.length * progressRef.current));
+    setVisiblePoints(fullCurvePoints.slice(0, count));
   });
 
   return (
     <group>
-      {/* Base glow line */}
+      {/* 1. Subtle background route guide (always visible) */}
       <Line
-        points={curvePoints}
-        color="#C5A880"
-        lineWidth={2}
-        opacity={0.3}
+        points={fullCurvePoints}
+        color="#1E3A8A"
+        lineWidth={1.5}
+        opacity={0.15}
         transparent
       />
 
-      {/* Animated dash line on top */}
-      <Line
-        points={curvePoints}
-        color="#C5A880"
-        lineWidth={3.5}
-        dashed
-        dashScale={20}
-        dashSize={0.5}
-        gapSize={0.5}
-        transparent
-      >
-        <lineDashedMaterial
-          ref={lineMaterialRef}
+      {/* 2. White outline/glow backing for high contrast against the blue map */}
+      {visiblePoints.length > 1 && (
+        <Line
+          points={visiblePoints}
+          color="#FFFFFF"
+          lineWidth={8.0}
+          opacity={0.75}
           transparent
-          opacity={0.95}
-          depthWrite={false}
+          position={[0, -0.005, 0]} // Slightly offset down to sit under the red line
         />
-      </Line>
+      )}
+
+      {/* 3. Main Maps Tours RED route path */}
+      {visiblePoints.length > 1 && (
+        <Line
+          points={visiblePoints}
+          color="#DC2626"
+          lineWidth={5.5}
+          opacity={1.0}
+          transparent
+        />
+      )}
     </group>
   );
 };

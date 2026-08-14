@@ -66,11 +66,11 @@ export const Navbar: React.FC = () => {
             {/* Desktop CTAs */}
             <div className="hidden lg:flex items-center gap-5">
               <a
-                href="tel:+442012345678"
+                href="tel:+447432655145"
                 className="flex items-center gap-2 text-brand-blue-900 hover:text-brand-red-600 text-xs font-bold transition-colors py-2"
               >
                 <Phone className="w-4 h-4 text-brand-red-600" />
-                <span>+44 (0) 20 1234 5678</span>
+                <span>07432 655145</span>
               </a>
 
               {/* Primary CTA: Navy background, turns Red on hover */}
@@ -132,11 +132,11 @@ export const Navbar: React.FC = () => {
               ))}
 
               <a
-                href="tel:+442012345678"
+                href="tel:+447432655145"
                 className="flex items-center gap-3 text-brand-blue-900 font-bold py-3 mt-2 text-sm"
               >
                 <Phone className="w-5 h-5 text-brand-red-600" />
-                <span>+44 (0) 20 1234 5678</span>
+                <span>07432 655145</span>
               </a>
 
               <Link

@@ -64,7 +64,7 @@ export const Contact: React.FC = () => {
 
             <div className="flex flex-col gap-6">
               <a
-                href="tel:+442012345678"
+                href="tel:+447432655145"
                 className="flex items-start gap-4 hover:text-brand-gold-500 transition-colors group"
               >
                 <div className="flex h-11 w-11 items-center justify-center rounded-sm bg-brand-green-900 text-brand-gold-400 group-hover:bg-brand-green-600 group-hover:text-white transition-colors duration-300">
@@ -72,7 +72,7 @@ export const Contact: React.FC = () => {
                 </div>
                 <div>
                   <span className="text-xs text-slate-500 block uppercase font-medium">Call Main Office</span>
-                  <span className="text-sm font-bold text-brand-green-900">+44 (0) 20 1234 5678</span>
+                  <span className="text-sm font-bold text-brand-green-900">07432 655145</span>
                 </div>
               </a>
 

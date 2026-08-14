@@ -15,17 +15,17 @@ export const Footer: React.FC = () => {
       {/* Main Links */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          
+
           {/* Brand Info Column */}
           <div className="flex flex-col gap-6">
             <Link to="/" className="inline-block">
               <Logo variant="dark" size="lg" />
             </Link>
-            
+
             <p className="text-xs sm:text-sm leading-relaxed text-slate-300">
               Official UK travel and private minibus hire platform. Providing executive group road trips, corporate charter transport, and guided tours from England to Scotland.
             </p>
-            
+
             <div className="flex items-center gap-2.5 text-xs text-slate-300 bg-slate-900/80 p-3 rounded border border-slate-800 w-fit">
               <ShieldCheck className="w-4.5 h-4.5 text-brand-red-500 flex-shrink-0" />
               <span>Licensed Private Hire Operator</span>
@@ -114,7 +114,7 @@ export const Footer: React.FC = () => {
               <li className="flex gap-3">
                 <MapPin className="w-5 h-5 text-brand-red-500 flex-shrink-0" />
                 <span className="leading-relaxed text-slate-300">
-                  London HQ Office, Westminster,<br />London, SW1A 1AA
+                  HQ Office,<br />London,
                 </span>
               </li>
             </ul>

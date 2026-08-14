@@ -96,7 +96,7 @@ export const Contact: React.FC = () => {
                 <div>
                   <span className="text-xs text-slate-500 block uppercase font-medium">London HQ</span>
                   <span className="text-sm font-bold text-brand-green-900">
-                    London HQ Office, Westminster,<br />London, SW1A 1AA
+                    HQ Office,<br />London,
                   </span>
                 </div>
               </div>

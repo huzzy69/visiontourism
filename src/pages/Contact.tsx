@@ -108,7 +108,7 @@ export const Contact: React.FC = () => {
                 <div>
                   <span className="text-xs text-slate-500 block uppercase font-medium">Business Hours</span>
                   <span className="text-sm font-bold text-brand-green-900">
-                    Mon - Sun: 8:00 AM - 8:00 PM GMT
+                    Open 24/7
                   </span>
                 </div>
               </div>

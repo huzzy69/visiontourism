@@ -147,7 +147,7 @@ export const VehicleModel: React.FC<VehicleModelProps> = ({
         <meshStandardMaterial color="#0F172A" roughness={0.5} metalness={0.0} />
       </mesh>
 
-      {/* 8. Maps Tours RED & BLUE Side Swoosh Stripes */}
+      {/* 8. Vision Tourism RED & BLUE Side Swoosh Stripes */}
       {/* Red Stripe */}
       <mesh position={[-0.575, 0.48, -0.05]}>
         <boxGeometry args={[0.015, 0.08, 2.0]} />

@@ -28,11 +28,10 @@ export const FamousSights: React.FC = () => {
             <button
               key={region}
               onClick={() => setFilterRegion(region)}
-              className={`px-6 py-2.5 rounded-sm text-xs font-semibold uppercase tracking-wider transition-all duration-300 ${
-                filterRegion === region
+              className={`px-6 py-2.5 rounded-sm text-xs font-semibold uppercase tracking-wider transition-all duration-300 ${filterRegion === region
                   ? 'bg-brand-green-900 text-white shadow-md'
                   : 'bg-brand-cream-200 text-brand-green-900/80 hover:bg-brand-cream-300'
-              }`}
+                }`}
             >
               {region} {region !== 'All' ? 'Destinations' : ''}
             </button>
@@ -90,13 +89,13 @@ export const FamousSights: React.FC = () => {
         </div>
 
         {/* Private Custom CTA Bar */}
-        <div className="mt-16 bg-brand-green-900 text-white rounded-sm p-8 sm:p-12 relative overflow-hidden border border-brand-gold-400/20 flex flex-col md:flex-row items-center justify-between gap-8">
+        <div className="mt-16 bg-brand-green-900 text-black rounded-sm p-8 sm:p-12 relative overflow-hidden border border-brand-gold-400/20 flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(197,168,128,0.08)_0%,transparent_70%)] pointer-events-none" />
           <div className="relative z-10 max-w-2xl text-center md:text-left">
             <h3 className="font-serif text-2xl sm:text-3xl font-bold text-brand-gold-400 mb-3">
               Want a Fully Customized Journey?
             </h3>
-            <p className="text-white/70 text-sm leading-relaxed">
+            <p className="text-black/70 text-sm leading-relaxed">
               We can craft a bespoke multi-day UK road trip visiting all these iconic sights and more. Rent a private luxury minibus with your own personal local guide.
             </p>
           </div>

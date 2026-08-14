@@ -51,8 +51,7 @@ export const OneDayTrips: React.FC = () => {
                     <span>{tour.rating}</span>
                   </div>
                   <div className="text-white text-right">
-                    <span className="text-xs text-white/70 block uppercase tracking-wider">From</span>
-                    <span className="text-2xl font-bold font-serif text-brand-gold-400">£{tour.priceFrom}</span>
+                    <span className="text-sm font-bold font-serif text-brand-gold-400 uppercase tracking-wider">Enquire Now</span>
                   </div>
                 </div>
               </div>

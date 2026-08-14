@@ -29,7 +29,7 @@ export default {
             300: '#fca5a5',
             400: '#f87171',
             500: '#ef4444',
-            600: '#dc2626', // Official Maps Tours Red
+            600: '#dc2626', // Official Vision Tourism Red
             700: '#b91c1c',
             800: '#991b1b',
             900: '#7f1d1d',

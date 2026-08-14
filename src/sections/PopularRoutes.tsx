@@ -77,8 +77,7 @@ export const PopularRoutes: React.FC = () => {
 
                 <div className="flex items-center justify-between border-t border-slate-100 pt-4">
                   <div>
-                    <span className="text-[10px] text-slate-400 block uppercase font-medium">From</span>
-                    <span className="text-xl font-bold font-serif text-brand-blue-900">£{tour.priceFrom}</span>
+                    <span className="text-xs font-bold font-serif text-brand-blue-900 uppercase tracking-wider">Enquire Now</span>
                   </div>
                   
                   <Link

@@ -16,7 +16,7 @@ export const Contact: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate API request
     setTimeout(() => {
       setIsSubmitting(false);
@@ -47,7 +47,7 @@ export const Contact: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-          
+
           {/* Left Column - Contact Coordinates */}
           <div className="lg:col-span-1 flex flex-col gap-8 bg-brand-cream-200 p-8 rounded-sm border border-brand-cream-300">
             <div>
@@ -58,7 +58,7 @@ export const Contact: React.FC = () => {
                 Reach Us Directly
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Have questions about vehicle hire capacity, custom day trip planning, or pricing schedules? Our advisors are ready to assist.
+                Have questions about vehicle hire capacity, custom day trip planning, or itinerary options? Our advisors are ready to assist.
               </p>
             </div>
 
@@ -77,7 +77,7 @@ export const Contact: React.FC = () => {
               </a>
 
               <a
-                href="mailto:info@mapstours.co.uk"
+                href="mailto:info@visiontourism.co.uk"
                 className="flex items-start gap-4 hover:text-brand-gold-500 transition-colors group"
               >
                 <div className="flex h-11 w-11 items-center justify-center rounded-sm bg-brand-green-900 text-brand-gold-400 group-hover:bg-brand-green-600 group-hover:text-white transition-colors duration-300">
@@ -85,7 +85,7 @@ export const Contact: React.FC = () => {
                 </div>
                 <div>
                   <span className="text-xs text-slate-500 block uppercase font-medium">Email Operations</span>
-                  <span className="text-sm font-bold text-brand-green-900">info@mapstours.co.uk</span>
+                  <span className="text-sm font-bold text-brand-green-900">[visiontourism.uk]</span>
                 </div>
               </a>
 
@@ -133,7 +133,7 @@ export const Contact: React.FC = () => {
                   Inquiry Received!
                 </h4>
                 <p className="text-white/80 text-sm leading-relaxed mb-6">
-                  Thank you for contacting Maps Tours and Rental. A private tour consultant will review your request and get back to you within 2-4 business hours.
+                  Thank you for contacting Vision Tourism. A private tour consultant will review your request and get back to you within 2-4 business hours.
                 </p>
                 <button
                   onClick={() => setIsSuccess(false)}
@@ -160,7 +160,7 @@ export const Contact: React.FC = () => {
                       className="border border-brand-cream-300 focus:border-brand-gold-400 bg-brand-cream-100/50 p-3 outline-none text-sm transition-colors"
                     />
                   </div>
-                  
+
                   <div className="flex flex-col gap-2">
                     <label htmlFor="email" className="text-xs font-bold text-slate-600 uppercase tracking-wider">
                       Email Address
@@ -193,7 +193,7 @@ export const Contact: React.FC = () => {
                       className="border border-brand-cream-300 focus:border-brand-gold-400 bg-brand-cream-100/50 p-3 outline-none text-sm transition-colors"
                     />
                   </div>
-                  
+
                   <div className="flex flex-col gap-2">
                     <label htmlFor="subject" className="text-xs font-bold text-slate-600 uppercase tracking-wider">
                       Subject

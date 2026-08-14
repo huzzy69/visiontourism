@@ -6,7 +6,7 @@ export const AboutSection: React.FC = () => {
     <section className="bg-white py-20 border-b border-slate-200 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          
+
           {/* Visual Collages panel */}
           <div className="relative flex justify-center items-center">
             {/* Main Image */}
@@ -17,7 +17,7 @@ export const AboutSection: React.FC = () => {
                 className="w-full h-full object-cover"
               />
             </div>
-            
+
             {/* Overlapping secondary image */}
             <div className="absolute -bottom-6 -left-4 w-[50%] aspect-[3/4] rounded overflow-hidden shadow-2xl border-4 border-white z-20 hidden sm:block">
               <img
@@ -41,9 +41,9 @@ export const AboutSection: React.FC = () => {
                 Bespoke UK Journeys Crafted by Experts
               </h2>
             </div>
-            
+
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-              At Maps Tours and Rental (mapstours.co.uk), we believe that group travel should be seamless, spacious, and enriched with local insight. From our base in London, we coordinate premium private group tours and minibus hire across Great Britain.
+              At Vision Tourism ([visiontourism.uk]), we believe that group travel should be seamless, spacious, and enriched with local insight. From our base in London, we coordinate premium private group tours and minibus hire across Great Britain.
             </p>
 
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed">

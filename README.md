@@ -1,6 +1,6 @@
-# Maps Tours and Rental - Premium UK Travel Platform
+# Vision Tourism - Premium UK Travel Platform
 
-A modern, high-end travel and minibus-hire web platform for **Maps Tours and Rental** (`mapstours.co.uk`). 
+A modern, high-end travel and minibus-hire web platform for **Vision Tourism** (`visiontourism.uk`). 
 
 This application coordinates private minibus rentals, guided 1-day tours departing from London, and custom multi-day overland itineraries across England, Scotland, and Wales.
 

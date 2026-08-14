@@ -133,14 +133,13 @@ export const EnglandScotlandTour: React.FC = () => {
           <div className="lg:col-span-1">
             <div className="bg-brand-green-900 text-white p-6 sm:p-8 rounded-sm shadow-xl sticky top-28 border border-brand-gold-400/20">
               <span className="text-xs tracking-[0.2em] font-semibold text-brand-gold-400 uppercase block mb-2">
-                Private Charter Rate
+                Private Charter
               </span>
               <div className="flex items-baseline gap-2 mb-4">
-                <span className="text-4xl font-serif font-bold text-brand-gold-400">£{tour.priceFrom}</span>
-                <span className="text-white/60 text-xs font-medium uppercase tracking-wider">Per Person</span>
+                <span className="text-3xl font-serif font-bold text-brand-gold-400 uppercase tracking-wider">Enquire Now</span>
               </div>
               <p className="text-xs text-white/50 mb-6 leading-relaxed">
-                *Indicated pricing based on small private groups. Complete minibus charter rates are available on request.
+                Complete minibus charter and customized itinerary options are available on request.
               </p>
 
               {/* What's Included */}

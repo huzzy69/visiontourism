@@ -1,6 +1,6 @@
-# SEO Web Crawler Rules for mapstours.co.uk
+# SEO Web Crawler Rules for visiontourism.uk
 User-agent: *
 Allow: /
 
 # Sitemap Location (will be configured upon domain deployment)
-Sitemap: https://mapstours.co.uk/sitemap.xml
+Sitemap: https://visiontourism.uk/sitemap.xml

@@ -73,7 +73,7 @@ export const RouteLines: React.FC = () => {
         />
       )}
 
-      {/* 3. Main Maps Tours RED route path */}
+      {/* 3. Main Vision Tourism RED route path */}
       {visiblePoints.length > 1 && (
         <Line
           points={visiblePoints}

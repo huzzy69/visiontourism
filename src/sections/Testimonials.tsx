@@ -13,14 +13,14 @@ export const Testimonials: React.FC = () => {
     {
       author: 'Evelyn & Family',
       origin: 'Private Hire, Australia',
-      text: 'Booking a private tour through Cotswold villages was the highlight of our UK vacation. Maps Tours tailored the stops, allowing us to spend extra time taking photos at Castle Combe. Outstanding service!',
+      text: 'Booking a private tour through Cotswold villages was the highlight of our UK vacation. Vision Tourism tailored the stops, allowing us to spend extra time taking photos at Castle Combe. Outstanding service!',
       rating: 5,
       trip: 'Oxford & Cotswolds Village Excursion',
     },
     {
       author: 'David Sterling',
       origin: 'Event Coordinator, UK',
-      text: 'Used their coach rental services for wedding guest transport. Absolute professionalism, punctuality, and clear communications. They simplified the entire coordinate logistics. Highly recommend mapstours.co.uk.',
+      text: 'Used their coach rental services for wedding guest transport. Absolute professionalism, punctuality, and clear communications. They simplified the entire coordinate logistics. Highly recommend visiontourism.co.uk.',
       rating: 5,
       trip: 'Private Event Transportation',
     },
@@ -29,7 +29,7 @@ export const Testimonials: React.FC = () => {
   return (
     <section className="bg-brand-neutral-100 py-20 border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Title */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-brand-red-600 font-bold tracking-[0.2em] text-xs uppercase block mb-1">

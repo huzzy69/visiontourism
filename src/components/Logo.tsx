@@ -38,63 +38,17 @@ export const Logo: React.FC<LogoProps> = ({ className = '', variant = 'light', s
           fill={navyColor}
         />
 
-        {/* Text: MAPS TOURS */}
+        {/* Text: VISION TOURISM */}
         <text
-          x="75"
-          y="108"
+          x="45"
+          y="118"
           fontFamily="Inter, Arial, sans-serif"
           fontWeight="900"
-          fontSize="48"
+          fontSize="42"
           letterSpacing="1.5"
           fill={textColor}
         >
-          MAPS T
-        </text>
-
-        {/* 'O' in TOURS with Union Jack Emblem */}
-        <g transform="translate(262, 90)">
-          {/* Outer circle ring */}
-          <circle cx="0" cy="0" r="19" fill={navyColor} stroke="#FFFFFF" strokeWidth="2" />
-          {/* Inner circle mask */}
-          <circle cx="0" cy="0" r="17" fill="#1E3A8A" />
-          
-          {/* Union Jack diagonal white background bars */}
-          <path d="M-12,-12 L12,12 M-12,12 L12,-12" stroke="#FFFFFF" strokeWidth="4.5" />
-          {/* Union Jack diagonal red bars */}
-          <path d="M-12,-12 L12,12 M-12,12 L12,-12" stroke="#DC2626" strokeWidth="2.2" />
-          
-          {/* Union Jack central white cross */}
-          <path d="M-17,0 L17,0 M0,-17 L0,17" stroke="#FFFFFF" strokeWidth="6.5" />
-          {/* Union Jack central red cross */}
-          <path d="M-17,0 L17,0 M0,-17 L0,17" stroke="#DC2626" strokeWidth="3.5" />
-          
-          {/* Emblem Border */}
-          <circle cx="0" cy="0" r="17" fill="none" stroke="#FFFFFF" strokeWidth="1.5" />
-        </g>
-
-        <text
-          x="287"
-          y="108"
-          fontFamily="Inter, Arial, sans-serif"
-          fontWeight="900"
-          fontSize="48"
-          letterSpacing="1.5"
-          fill={textColor}
-        >
-          URS
-        </text>
-
-        {/* Text: AND RENTAL */}
-        <text
-          x="122"
-          y="138"
-          fontFamily="Inter, Arial, sans-serif"
-          fontWeight="700"
-          fontSize="24"
-          letterSpacing="7"
-          fill={redColor}
-        >
-          AND RENTAL
+          VISION TOURISM
         </text>
       </svg>
     </div>

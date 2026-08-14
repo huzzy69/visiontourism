@@ -343,7 +343,7 @@ export const Book: React.FC = () => {
                 </li>
                 <li className="flex gap-2">
                   <span className="text-brand-gold-400 font-bold mt-0.5">•</span>
-                  <span><strong>Zero Hidden Fees:</strong> Pricing quotes compile all fuel, toll charges, passenger insurance, and driver accommodation.</span>
+                  <span><strong>Transparent Planning:</strong> Custom itinerary quotes compile all fuel, toll charges, passenger insurance, and driver accommodation.</span>
                 </li>
                 <li className="flex gap-2">
                   <span className="text-brand-gold-400 font-bold mt-0.5">•</span>

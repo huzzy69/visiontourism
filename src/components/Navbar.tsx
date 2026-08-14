@@ -26,7 +26,7 @@ export const Navbar: React.FC = () => {
       <header className="fixed top-0 left-0 right-0 z-40 bg-white border-b border-slate-200 shadow-sm py-3.5 transition-all duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
-            
+
             {/* Prominent Official Brand Logo */}
             <Link to="/" className="flex items-center group">
               <Logo size="md" />
@@ -39,10 +39,9 @@ export const Navbar: React.FC = () => {
                   key={link.path}
                   to={link.path}
                   className={({ isActive }) =>
-                    `text-xs sm:text-sm font-bold tracking-wide transition-colors duration-200 relative py-1.5 uppercase ${
-                      isActive
-                        ? 'text-brand-red-600'
-                        : 'text-brand-blue-900 hover:text-brand-red-600'
+                    `text-xs sm:text-sm font-bold tracking-wide transition-colors duration-200 relative py-1.5 uppercase ${isActive
+                      ? 'text-brand-red-600'
+                      : 'text-brand-blue-900 hover:text-brand-red-600'
                     }`
                   }
                 >
@@ -66,11 +65,11 @@ export const Navbar: React.FC = () => {
             {/* Desktop CTAs */}
             <div className="hidden lg:flex items-center gap-5">
               <a
-                href="tel:+447432655145"
+                href="tel:+4407432 655145"
                 className="flex items-center gap-2 text-brand-blue-900 hover:text-brand-red-600 text-xs font-bold transition-colors py-2"
               >
                 <Phone className="w-4 h-4 text-brand-red-600" />
-                <span>07432 655145</span>
+                <span>+44 07432 655145</span>
               </a>
 
               {/* Primary CTA: Navy background, turns Red on hover */}
@@ -92,7 +91,7 @@ export const Navbar: React.FC = () => {
               >
                 <Calendar className="w-5 h-5" />
               </Link>
-              
+
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 className="text-brand-blue-900 hover:text-brand-red-600 p-2 focus:outline-none transition-colors"
@@ -122,8 +121,7 @@ export const Navbar: React.FC = () => {
                   to={link.path}
                   onClick={() => setIsOpen(false)}
                   className={({ isActive }) =>
-                    `text-base font-bold tracking-wide py-2 border-b border-slate-100 uppercase transition-colors ${
-                      isActive ? 'text-brand-red-600' : 'text-brand-blue-900 hover:text-brand-red-600'
+                    `text-base font-bold tracking-wide py-2 border-b border-slate-100 uppercase transition-colors ${isActive ? 'text-brand-red-600' : 'text-brand-blue-900 hover:text-brand-red-600'
                     }`
                   }
                 >
@@ -132,11 +130,11 @@ export const Navbar: React.FC = () => {
               ))}
 
               <a
-                href="tel:+447432655145"
+                href="tel:+4407432 655145"
                 className="flex items-center gap-3 text-brand-blue-900 font-bold py-3 mt-2 text-sm"
               >
                 <Phone className="w-5 h-5 text-brand-red-600" />
-                <span>07432 655145</span>
+                <span>+44 07432 655145</span>
               </a>
 
               <Link

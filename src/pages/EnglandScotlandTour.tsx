@@ -49,7 +49,7 @@ export const EnglandScotlandTour: React.FC = () => {
               <p className="text-slate-600 leading-relaxed mb-6">
                 {tour.longDescription}
               </p>
-              
+
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 border-t border-b border-brand-cream-300 py-6 my-6 bg-brand-cream-100/50 px-4 rounded-sm">
                 <div className="flex items-center gap-3">
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-green-100 text-brand-green-900">
@@ -99,12 +99,11 @@ export const EnglandScotlandTour: React.FC = () => {
                         </div>
                       </div>
                       <ChevronDown
-                        className={`w-5 h-5 text-slate-500 transition-transform duration-300 ${
-                          activeDay === day.day ? 'rotate-180' : ''
-                        }`}
+                        className={`w-5 h-5 text-slate-500 transition-transform duration-300 ${activeDay === day.day ? 'rotate-180' : ''
+                          }`}
                       />
                     </button>
-                    
+
                     {activeDay === day.day && (
                       <div className="p-6 border-t border-brand-cream-200">
                         <p className="text-slate-600 text-sm leading-relaxed mb-4">
@@ -131,7 +130,7 @@ export const EnglandScotlandTour: React.FC = () => {
 
           {/* Booking Summary Card Sidebar (Right 1/3) */}
           <div className="lg:col-span-1">
-            <div className="bg-brand-green-900 text-white p-6 sm:p-8 rounded-sm shadow-xl sticky top-28 border border-brand-gold-400/20">
+            <div className="bg-brand-green-900 text-Black p-6 sm:p-8 rounded-sm shadow-xl sticky top-28 border border-brand-gold-400/20">
               <span className="text-xs tracking-[0.2em] font-semibold text-brand-gold-400 uppercase block mb-2">
                 Private Charter
               </span>
@@ -147,7 +146,7 @@ export const EnglandScotlandTour: React.FC = () => {
                 <h4 className="text-xs font-bold text-brand-gold-400 uppercase tracking-widest mb-4">
                   What’s Included
                 </h4>
-                <ul className="flex flex-col gap-3 text-xs text-white/80">
+                <ul className="flex flex-col gap-3 text-xs text-black/80">
                   {inclusions.map((item, idx) => (
                     <li key={idx} className="flex items-start gap-2.5">
                       <CheckCircle2 className="w-4 h-4 text-brand-gold-400 mt-0.5 flex-shrink-0" />

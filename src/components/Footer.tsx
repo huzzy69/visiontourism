@@ -100,9 +100,9 @@ export const Footer: React.FC = () => {
                 <Phone className="w-5 h-5 text-brand-red-500 flex-shrink-0" />
                 <div className="flex flex-col">
                   <a href="tel:+447432655145" className="hover:text-brand-red-400 transition-colors font-bold text-white">
-                    07432 655145
+                    +44  07432 655145
                   </a>
-                  <span className="text-[10px] text-slate-400">Open 24/7</span>
+                  <span className="text-[10px] text-slate-400">Mon - Sun: 8:00 AM - 8:00 PM GMT</span>
                 </div>
               </li>
               <li className="flex gap-3">

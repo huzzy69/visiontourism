@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemap Location (will be configured upon domain deployment)
-Sitemap: https://visiontourism.uk/sitemap.xml
+Sitemap: https://visiontourism.org/sitemap.xml

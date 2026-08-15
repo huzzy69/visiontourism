@@ -85,7 +85,7 @@ export const Contact: React.FC = () => {
                 </div>
                 <div>
                   <span className="text-xs text-slate-500 block uppercase font-medium">Email Operations</span>
-                  <span className="text-sm font-bold text-brand-green-900">[visiontourism.uk]</span>
+                  <span className="text-sm font-bold text-brand-green-900">info@visiontourism.uk</span>
                 </div>
               </a>
 

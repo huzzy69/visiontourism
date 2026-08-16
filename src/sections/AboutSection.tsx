@@ -43,7 +43,7 @@ export const AboutSection: React.FC = () => {
             </div>
 
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-              At Vision Tourism (info@visiontourism.uk), we believe that group travel should be seamless, spacious, and enriched with local insight. From our base in London, we coordinate premium private group tours and minibus hire across Great Britain.
+              At Vision Tourism (info@visiontourism.org), we believe that group travel should be seamless, spacious, and enriched with local insight. From our base in London, we coordinate premium private group tours and minibus hire across Great Britain.
             </p>
 
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed">

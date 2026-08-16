@@ -107,8 +107,8 @@ export const Footer: React.FC = () => {
               </li>
               <li className="flex gap-3">
                 <Mail className="w-5 h-5 text-brand-red-500 flex-shrink-0" />
-                <a href="mailto:info@visiontourism.uk" className="hover:text-brand-red-400 transition-colors">
-                  info@visiontourism.uk
+                <a href="mailto:info@visiontourism.org" className="hover:text-brand-red-400 transition-colors">
+                  info@visiontourism.org
                 </a>
               </li>
               <li className="flex gap-3">
@@ -126,7 +126,7 @@ export const Footer: React.FC = () => {
       {/* Sub Footer */}
       <div className="bg-slate-950 border-t border-slate-800/80 py-6 text-xs text-slate-400 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p>&copy; {currentYear} Vision Tourism (info@visiontourism.uk). All rights reserved.</p>
+          <p>&copy; {currentYear} Vision Tourism (info@visiontourism.org). All rights reserved.</p>
           <div className="flex gap-6 text-slate-400">
             <Link to="/contact" className="hover:text-white transition-colors">Privacy Policy</Link>
             <Link to="/contact" className="hover:text-white transition-colors">Terms of Hire</Link>

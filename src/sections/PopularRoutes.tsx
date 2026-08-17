@@ -9,21 +9,21 @@ export const PopularRoutes: React.FC = () => {
   return (
     <section className="bg-white py-20 border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Title */}
         <div className="flex flex-col md:flex-row justify-between items-end gap-6 mb-16">
           <div className="max-w-xl">
             <span className="text-brand-red-600 font-bold tracking-[0.2em] text-xs uppercase block mb-1">
-              Curated Road Trips
+              Curated Road Tours
             </span>
             <h2 className="font-serif text-3xl md:text-4xl text-brand-blue-900 font-extrabold">
-              Popular Road Trip Itineraries
+              Popular Road Tours
             </h2>
             <p className="text-slate-600 text-sm mt-3 leading-relaxed">
               Explore handpicked private road trips across England and Scotland, piloted by professional driver-guides.
             </p>
           </div>
-          
+
           <Link
             to="/1-day-trips"
             className="flex items-center gap-2 text-brand-blue-900 hover:text-brand-red-600 text-xs font-bold transition-colors uppercase tracking-wider whitespace-nowrap"
@@ -69,7 +69,7 @@ export const PopularRoutes: React.FC = () => {
                   <h3 className="font-serif text-lg sm:text-xl text-brand-blue-900 font-bold mb-3 group-hover:text-brand-red-600 transition-colors duration-300">
                     {tour.title}
                   </h3>
-                  
+
                   <p className="text-slate-600 text-xs sm:text-sm leading-relaxed mb-6">
                     {tour.description}
                   </p>
@@ -79,7 +79,7 @@ export const PopularRoutes: React.FC = () => {
                   <div>
                     <span className="text-xs font-bold font-serif text-brand-blue-900 uppercase tracking-wider">Enquire Now</span>
                   </div>
-                  
+
                   <Link
                     to={tour.id === 'england-scotland-4-days' ? '/england-scotland-4-days' : `/book?tour=${tour.id}`}
                     className="flex items-center gap-1.5 bg-brand-blue-900 hover:bg-brand-red-600 text-white font-bold px-4 py-2.5 rounded text-[10px] uppercase tracking-wider transition-colors"

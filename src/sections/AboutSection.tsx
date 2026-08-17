@@ -70,7 +70,7 @@ export const AboutSection: React.FC = () => {
                 <Milestone className="w-5 h-5 text-brand-red-600 flex-shrink-0" />
                 <div className="flex flex-col">
                   <span className="text-xs font-bold text-brand-blue-900">Flexibility</span>
-                  <span className="text-[10px] text-slate-500 mt-0.5">Bespoke itineraries</span>
+                  <span className="text-[10px] text-slate-500 mt-0.5">Bespoke tours</span>
                 </div>
               </div>
             </div>

@@ -55,7 +55,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <Link to="/book" className="hover:text-brand-red-400 transition-colors">
-                  Custom Group Itineraries
+                  Custom Group Tours
                 </Link>
               </li>
             </ul>

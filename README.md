@@ -2,7 +2,7 @@
 
 A modern, high-end travel and minibus-hire web platform for **Vision Tourism** (`visiontourism.org`). 
 
-This application coordinates private minibus rentals, guided 1-day tours departing from London, and custom multi-day overland itineraries across England, Scotland, and Wales.
+This application coordinates private minibus rentals, guided 1-day tours departing from London, and custom multi-day tours across England, Scotland, and Wales.
 
 ## 🛠️ Technology Stack
 

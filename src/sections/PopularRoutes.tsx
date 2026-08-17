@@ -20,7 +20,7 @@ export const PopularRoutes: React.FC = () => {
               Popular Road Tours
             </h2>
             <p className="text-slate-600 text-sm mt-3 leading-relaxed">
-              Explore handpicked private road trips across England and Scotland, piloted by professional driver-guides.
+              Explore handpicked private road trips across England, Scotland, Wales, and Northern Ireland, piloted by professional driver-guides.
             </p>
           </div>
         </div>
@@ -73,7 +73,7 @@ export const PopularRoutes: React.FC = () => {
                   </div>
 
                   <Link
-                    to={tour.id === 'england-scotland-4-days' ? '/england-scotland-4-days' : `/book?tour=${tour.id}`}
+                    to={tour.id === 'england-scotland-4-days' ? '/england-scotland-4-days' : tour.id === 'wales-northern-ireland-4-days' ? '/wales-northern-ireland-4-days' : `/book?tour=${tour.id}`}
                     className="flex items-center gap-1.5 bg-brand-blue-900 hover:bg-brand-red-600 text-white font-bold px-4 py-2.5 rounded text-[10px] uppercase tracking-wider transition-colors"
                   >
                     Details

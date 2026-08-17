@@ -39,6 +39,16 @@ export const HERO_DESTINATIONS: MapDestination[] = [
     name: 'Edinburgh',
     position: [-0.32, 0.77, -1.48],
   },
+  {
+    id: 'cardiff',
+    name: 'Cardiff',
+    position: [-0.52, 0.77, 0.78],
+  },
+  {
+    id: 'belfast',
+    name: 'Belfast',
+    position: [-1.30, 0.77, -0.70],
+  },
 ];
 
 interface MarkerProps {

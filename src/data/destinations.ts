@@ -1,7 +1,7 @@
 export interface Destination {
   id: string;
   name: string;
-  region: 'England' | 'Scotland' | 'Wales';
+  region: 'England' | 'Scotland' | 'Wales' | 'Northern Ireland';
   description: string;
   shortDescription: string;
   imageUrl: string;
@@ -83,5 +83,29 @@ export const destinations: Destination[] = [
     latLng: { lat: 55.9533, lng: -3.1883 },
     featured: true,
     highlights: ['Edinburgh Castle', 'Royal Mile', 'Arthur’s Seat']
+  },
+  {
+    id: 'cardiff',
+    name: 'Cardiff',
+    region: 'Wales',
+    description: 'The historic capital of Wales, famous for its magnificent castle, Cardiff Bay waterfront, and passion for rugby.',
+    shortDescription: 'Welsh Capital',
+    imageUrl: 'https://images.unsplash.com/photo-1549880181-56a44cf4a9a1?q=80&w=1200&auto=format&fit=crop',
+    coordinates: { x: -0.52, y: 0.08, z: 0.78 },
+    latLng: { lat: 51.4816, lng: -3.1791 },
+    featured: true,
+    highlights: ['Cardiff Castle', 'Cardiff Bay', 'National Museum Cardiff']
+  },
+  {
+    id: 'belfast',
+    name: 'Belfast',
+    region: 'Northern Ireland',
+    description: 'The capital of Northern Ireland, known for its rich ship-building history, Titanic heritage, and lively traditional music scene.',
+    shortDescription: 'Titanic Heritage',
+    imageUrl: 'https://images.unsplash.com/photo-1552074284-5e88ef1aef18?q=80&w=1200&auto=format&fit=crop',
+    coordinates: { x: -1.30, y: 0.08, z: -0.70 },
+    latLng: { lat: 54.5973, lng: -5.9301 },
+    featured: true,
+    highlights: ['Titanic Belfast', 'Belfast City Hall', 'Crumlin Road Gaol']
   }
 ];

@@ -4,7 +4,7 @@ import { tours } from '../data/tours';
 import { Star, Clock, ArrowRight } from 'lucide-react';
 
 export const PopularRoutes: React.FC = () => {
-  const featuredTours = tours.filter((t) => t.featured);
+  const featuredTours = tours.filter((t) => t.featured && t.type !== '1-day');
 
   return (
     <section className="bg-white py-20 border-b border-slate-200">
@@ -23,14 +23,6 @@ export const PopularRoutes: React.FC = () => {
               Explore handpicked private road trips across England and Scotland, piloted by professional driver-guides.
             </p>
           </div>
-
-          <Link
-            to="/1-day-trips"
-            className="flex items-center gap-2 text-brand-blue-900 hover:text-brand-red-600 text-xs font-bold transition-colors uppercase tracking-wider whitespace-nowrap"
-          >
-            View All Trips
-            <ArrowRight className="w-4 h-4" />
-          </Link>
         </div>
 
         {/* Routes Grid */}

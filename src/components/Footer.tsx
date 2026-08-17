@@ -39,11 +39,6 @@ export const Footer: React.FC = () => {
             </h3>
             <ul className="flex flex-col gap-3 text-xs sm:text-sm">
               <li>
-                <Link to="/1-day-trips" className="hover:text-brand-red-400 transition-colors">
-                  1-Day Excursions from London
-                </Link>
-              </li>
-              <li>
                 <Link to="/england-scotland-4-days" className="hover:text-brand-red-400 transition-colors">
                   England to Scotland (4-Days)
                 </Link>
@@ -98,9 +93,12 @@ export const Footer: React.FC = () => {
             <ul className="flex flex-col gap-4 text-xs sm:text-sm">
               <li className="flex gap-3">
                 <Phone className="w-5 h-5 text-brand-red-500 flex-shrink-0" />
-                <div className="flex flex-col">
+                <div className="flex flex-col gap-1">
                   <a href="tel:+447432655145" className="hover:text-brand-red-400 transition-colors font-bold text-white">
-                    +44  07432 655145
+                    +44 07432 655145
+                  </a>
+                  <a href="tel:+447401045450" className="hover:text-brand-red-400 transition-colors font-bold text-white">
+                    +44 07401 045450
                   </a>
                   <span className="text-[10px] text-slate-400">24/7 Active</span>
                 </div>

@@ -359,12 +359,20 @@ export const Book: React.FC = () => {
               <p className="text-slate-500 text-xs leading-relaxed mb-4">
                 Not sure which minibus fits your luggage capacity or what route fits your timeline? Speak directly with a booking coordinator.
               </p>
-              <a
-                href="tel:+447432655145"
-                className="inline-block text-brand-green-900 hover:text-brand-gold-400 text-sm font-bold transition-colors"
-              >
-                07432 655145
-              </a>
+              <div className="flex flex-col gap-1.5 justify-center items-center">
+                <a
+                  href="tel:+447432655145"
+                  className="inline-block text-brand-green-900 hover:text-brand-gold-400 text-sm font-bold transition-colors"
+                >
+                  07432 655145
+                </a>
+                <a
+                  href="tel:+447401045450"
+                  className="inline-block text-brand-green-900 hover:text-brand-gold-400 text-sm font-bold transition-colors"
+                >
+                  07401 045450
+                </a>
+              </div>
             </div>
           </div>
         </div>

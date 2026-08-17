@@ -7,7 +7,6 @@ import { LoadingScreen } from './components/LoadingScreen';
 
 // Lazy load routed pages
 const Home = lazy(() => import('./pages/Home').then(module => ({ default: module.Home })));
-const OneDayTrips = lazy(() => import('./pages/OneDayTrips').then(module => ({ default: module.OneDayTrips })));
 const EnglandScotlandTour = lazy(() => import('./pages/EnglandScotlandTour').then(module => ({ default: module.EnglandScotlandTour })));
 const FamousSights = lazy(() => import('./pages/FamousSights').then(module => ({ default: module.FamousSights })));
 const Contact = lazy(() => import('./pages/Contact').then(module => ({ default: module.Contact })));
@@ -38,7 +37,6 @@ export const App: React.FC = () => {
         <Suspense fallback={<LoadingScreen isLoading={true} />}>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/1-day-trips" element={<OneDayTrips />} />
             <Route path="/england-scotland-4-days" element={<EnglandScotlandTour />} />
             <Route path="/famous-sights" element={<FamousSights />} />
             <Route path="/contact" element={<Contact />} />

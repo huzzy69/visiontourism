@@ -63,18 +63,26 @@ export const Contact: React.FC = () => {
             </div>
 
             <div className="flex flex-col gap-6">
-              <a
-                href="tel:+447432655145"
-                className="flex items-start gap-4 hover:text-brand-gold-500 transition-colors group"
-              >
-                <div className="flex h-11 w-11 items-center justify-center rounded-sm bg-brand-green-900 text-brand-gold-400 group-hover:bg-brand-green-600 group-hover:text-white transition-colors duration-300">
+              <div className="flex items-start gap-4 group">
+                <div className="flex h-11 w-11 items-center justify-center rounded-sm bg-brand-green-900 text-brand-gold-400">
                   <Phone className="w-5 h-5" />
                 </div>
-                <div>
+                <div className="flex flex-col gap-1">
                   <span className="text-xs text-slate-500 block uppercase font-medium">Call Main Office</span>
-                  <span className="text-sm font-bold text-brand-green-900">07432 655145</span>
+                  <a
+                    href="tel:+447432655145"
+                    className="text-sm font-bold text-brand-green-900 hover:text-brand-gold-500 transition-colors"
+                  >
+                    07432 655145
+                  </a>
+                  <a
+                    href="tel:+447401045450"
+                    className="text-sm font-bold text-brand-green-900 hover:text-brand-gold-500 transition-colors"
+                  >
+                    07401 045450
+                  </a>
                 </div>
-              </a>
+              </div>
 
               <a
                 href="mailto:info@visiontourism.co.uk"
@@ -207,7 +215,6 @@ export const Contact: React.FC = () => {
                     >
                       <option>General Inquiry</option>
                       <option>Minibus Rental Quote</option>
-                      <option>1-Day Tour booking</option>
                       <option>England to Scotland Tour booking</option>
                       <option>Custom Tour Request</option>
                     </select>

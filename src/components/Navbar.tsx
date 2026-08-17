@@ -15,7 +15,6 @@ export const Navbar: React.FC = () => {
 
   const navLinks = [
     { name: 'Home', path: '/' },
-    { name: '1-Day Trips', path: '/1-day-trips' },
     { name: 'England to Scotland Tour', path: '/england-scotland-4-days' },
     { name: 'Famous Sights', path: '/famous-sights' },
     { name: 'Contact', path: '/contact' },
@@ -64,13 +63,22 @@ export const Navbar: React.FC = () => {
 
             {/* Desktop CTAs */}
             <div className="hidden lg:flex items-center gap-5">
-              <a
-                href="tel:+4407432 655145"
-                className="flex items-center gap-2 text-brand-blue-900 hover:text-brand-red-600 text-xs font-bold transition-colors py-2"
-              >
-                <Phone className="w-4 h-4 text-brand-red-600" />
-                <span>+44 07432 655145</span>
-              </a>
+              <div className="flex flex-col items-end">
+                <a
+                  href="tel:+447432655145"
+                  className="flex items-center gap-2 text-brand-blue-900 hover:text-brand-red-600 text-xs font-bold transition-colors py-0.5"
+                >
+                  <Phone className="w-3.5 h-3.5 text-brand-red-600" />
+                  <span>+44 07432 655145</span>
+                </a>
+                <a
+                  href="tel:+447401045450"
+                  className="flex items-center gap-2 text-brand-blue-900 hover:text-brand-red-600 text-xs font-bold transition-colors py-0.5"
+                >
+                  <Phone className="w-3.5 h-3.5 text-brand-red-600" />
+                  <span>+44 07401 045450</span>
+                </a>
+              </div>
 
               {/* Primary CTA: Navy background, turns Red on hover */}
               <Link
@@ -129,13 +137,22 @@ export const Navbar: React.FC = () => {
                 </NavLink>
               ))}
 
-              <a
-                href="tel:+4407432 655145"
-                className="flex items-center gap-3 text-brand-blue-900 font-bold py-3 mt-2 text-sm"
-              >
-                <Phone className="w-5 h-5 text-brand-red-600" />
-                <span>+44 07432 655145</span>
-              </a>
+              <div className="flex flex-col gap-2.5 border-b border-slate-100 py-3 mt-2">
+                <a
+                  href="tel:+447432655145"
+                  className="flex items-center gap-3 text-brand-blue-900 font-bold text-sm"
+                >
+                  <Phone className="w-5 h-5 text-brand-red-600" />
+                  <span>+44 07432 655145</span>
+                </a>
+                <a
+                  href="tel:+447401045450"
+                  className="flex items-center gap-3 text-brand-blue-900 font-bold text-sm"
+                >
+                  <Phone className="w-5 h-5 text-brand-red-600" />
+                  <span>+44 07401 045450</span>
+                </a>
+              </div>
 
               <Link
                 to="/book"

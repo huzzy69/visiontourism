@@ -4,8 +4,8 @@ import { tours } from '../data/tours';
 import { Clock, Star, MapPin, CheckCircle2, ChevronDown, Calendar } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-export const WalesNorthernIrelandTour: React.FC = () => {
-  const tour = tours.find((t) => t.id === 'wales-northern-ireland-4-days');
+export const NorthernIrelandWalesTour: React.FC = () => {
+  const tour = tours.find((t) => t.id === 'northern-ireland-to-wales');
   const [activeDay, setActiveDay] = useState<number | null>(1);
 
   if (!tour) {
@@ -18,20 +18,20 @@ export const WalesNorthernIrelandTour: React.FC = () => {
 
   const inclusions = [
     'Private executive minibus travel with climate control',
-    'Professional driver-guide with local Celtic heritage expertise',
-    '3 Nights accommodation in highly-rated 3/4-star hotels',
+    'Professional driver-guide with local historical expertise',
+    '4 Nights accommodation in highly-rated 3/4-star hotels',
     'Daily breakfast included at hotels',
-    'Titanic Belfast & Giant’s Causeway entry vouchers',
-    'Ferry crossing over the Irish Sea included'
+    'Irish Sea ferry crossing tickets included',
+    'Door-to-door passenger pickup from Belfast or Cardiff hotels'
   ];
 
   return (
     <div className="pt-20 pb-16">
       <PageHeader
         title={tour.title}
-        subtitle="A journey through historic castles, rolling Welsh valleys, and the dramatic coastline of Northern Ireland."
+        subtitle="Discover the beauty of Northern Ireland and Wales"
         bgImageUrl={tour.imageUrl}
-        breadcrumbs={[{ name: 'Wales & Northern Ireland Tour' }]}
+        breadcrumbs={[{ name: 'Northern Ireland to Wales' }]}
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -130,7 +130,7 @@ export const WalesNorthernIrelandTour: React.FC = () => {
 
           {/* Booking Summary Card Sidebar (Right 1/3) */}
           <div className="lg:col-span-1">
-            <div className="bg-brand-green-900 text-black p-6 sm:p-8 rounded-sm shadow-xl sticky top-28 border border-brand-gold-400/20">
+            <div className="bg-brand-green-900 text-Black p-6 sm:p-8 rounded-sm shadow-xl sticky top-28 border border-brand-gold-400/20">
               <span className="text-xs tracking-[0.2em] font-semibold text-brand-gold-400 uppercase block mb-2">
                 Private Charter
               </span>
@@ -146,7 +146,7 @@ export const WalesNorthernIrelandTour: React.FC = () => {
                 <h4 className="text-xs font-bold text-brand-gold-400 uppercase tracking-widest mb-4">
                   What’s Included
                 </h4>
-                <ul className="flex flex-col gap-3 text-black/80">
+                <ul className="flex flex-col gap-3 text-xs text-black/80">
                   {inclusions.map((item, idx) => (
                     <li key={idx} className="flex items-start gap-2.5">
                       <CheckCircle2 className="w-4 h-4 text-brand-gold-400 mt-0.5 flex-shrink-0" />

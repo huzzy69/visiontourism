@@ -1,16 +1,18 @@
 import React, { useRef, useMemo } from 'react';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
-import { getUKRouteCurve } from './RouteLines';
+import { getRouteCurve } from './RouteLines';
 
 interface VehicleModelProps {
   progressOverride?: number;
   isReducedMotion?: boolean;
+  activeRoute?: 'england-scotland' | 'northern-ireland-wales';
 }
 
 export const VehicleModel: React.FC<VehicleModelProps> = ({
   progressOverride,
   isReducedMotion = false,
+  activeRoute = 'england-scotland',
 }) => {
   const vehicleGroupRef = useRef<THREE.Group>(null);
   const frontLeftWheel = useRef<THREE.Mesh>(null);
@@ -18,9 +20,15 @@ export const VehicleModel: React.FC<VehicleModelProps> = ({
   const rearLeftWheel = useRef<THREE.Mesh>(null);
   const rearRightWheel = useRef<THREE.Mesh>(null);
 
-  const curve = useMemo(() => getUKRouteCurve(), []);
+  const curve = useMemo(() => getRouteCurve(activeRoute), [activeRoute]);
   const progressRef = useRef<number>(0);
-  const directionRef = useRef<number>(1); // 1 = London -> Edinburgh, -1 = Edinburgh -> London
+  const directionRef = useRef<number>(1); // 1 = Forward, -1 = Reverse
+
+  // Reset vehicle state when activeRoute changes
+  React.useEffect(() => {
+    progressRef.current = 0;
+    directionRef.current = 1;
+  }, [activeRoute]);
 
   useFrame((state, delta) => {
     if (!vehicleGroupRef.current) return;

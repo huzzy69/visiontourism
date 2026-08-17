@@ -8,6 +8,7 @@ import { useScrollPosition } from '../hooks/useScrollPosition';
 export const Hero: React.FC = () => {
   const scrollY = useScrollPosition();
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [activeRoute, setActiveRoute] = useState<'england-scotland' | 'northern-ireland-wales'>('england-scotland');
 
   useEffect(() => {
     const progress = Math.min(Math.max(scrollY / 750, 0), 1);
@@ -56,35 +57,84 @@ export const Hero: React.FC = () => {
               Make Memories.
             </motion.h1>
 
+            {/* Route Selection Tabs */}
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.25, duration: 0.8 }}
+              className="flex flex-wrap gap-2.5 my-1"
+            >
+              <button
+                onClick={() => setActiveRoute('england-scotland')}
+                className={`px-4 py-2 text-[10px] sm:text-xs font-bold uppercase tracking-wider rounded transition-all duration-300 border ${
+                  activeRoute === 'england-scotland'
+                    ? 'bg-brand-blue-900 border-brand-blue-900 text-white shadow-md'
+                    : 'bg-white hover:bg-slate-50 border-slate-200 text-brand-blue-900'
+                }`}
+              >
+                England to Scotland Tour
+              </button>
+              <button
+                onClick={() => setActiveRoute('northern-ireland-wales')}
+                className={`px-4 py-2 text-[10px] sm:text-xs font-bold uppercase tracking-wider rounded transition-all duration-300 border ${
+                  activeRoute === 'northern-ireland-wales'
+                    ? 'bg-brand-blue-900 border-brand-blue-900 text-white shadow-md'
+                    : 'bg-white hover:bg-slate-50 border-slate-200 text-brand-blue-900'
+                }`}
+              >
+                Northern Ireland to Wales Tour
+              </button>
+            </motion.div>
+
             {/* Supporting Subtitle */}
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
+              key={activeRoute}
+              initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 0.9, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.8 }}
-              className="text-slate-600 text-sm sm:text-base font-normal leading-relaxed max-w-lg"
+              transition={{ duration: 0.5 }}
+              className="text-slate-600 text-sm sm:text-base font-normal leading-relaxed max-w-lg min-h-[72px]"
             >
-              Curated overland travel from London through Oxford, Manchester, the Lake District, Glasgow, and Edinburgh. Executive minibus charters with professional driver-guides.
+              {activeRoute === 'england-scotland'
+                ? 'Curated overland travel from London through Oxford, Manchester, the Lake District, Glasgow, and Edinburgh. Executive minibus charters with professional driver-guides.'
+                : 'Discover the beauty of Northern Ireland and Wales. Cross the Irish Sea, visit Titanic Belfast, the Giant’s Causeway, Snowdonia National Park, and historic Cardiff.'}
             </motion.p>
 
             {/* City Stops Quick List */}
             <motion.div
-              initial={{ opacity: 0, y: 15 }}
+              key={`stops-${activeRoute}`}
+              initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.8 }}
+              transition={{ duration: 0.5 }}
               className="flex flex-wrap items-center gap-2 text-[11px] uppercase font-bold text-slate-500 tracking-wider"
             >
               <MapPin className="w-3.5 h-3.5 text-brand-red-600" />
-              <span className="text-brand-blue-900">London</span>
-              <span>•</span>
-              <span className="text-brand-blue-900">Oxford</span>
-              <span>•</span>
-              <span className="text-brand-blue-900">Manchester</span>
-              <span>•</span>
-              <span className="text-brand-blue-900">Lake District</span>
-              <span>•</span>
-              <span className="text-brand-blue-900">Glasgow</span>
-              <span>•</span>
-              <span className="text-brand-blue-900">Edinburgh</span>
+              {activeRoute === 'england-scotland' ? (
+                <>
+                  <span className="text-brand-blue-900">London</span>
+                  <span>•</span>
+                  <span className="text-brand-blue-900">Oxford</span>
+                  <span>•</span>
+                  <span className="text-brand-blue-900">Manchester</span>
+                  <span>•</span>
+                  <span className="text-brand-blue-900">Lake District</span>
+                  <span>•</span>
+                  <span className="text-brand-blue-900">Glasgow</span>
+                  <span>•</span>
+                  <span className="text-brand-blue-900">Edinburgh</span>
+                </>
+              ) : (
+                <>
+                  <span className="text-brand-blue-900">Belfast</span>
+                  <span>•</span>
+                  <span className="text-brand-blue-900">Giant’s Causeway</span>
+                  <span>•</span>
+                  <span className="text-brand-blue-900">Holyhead</span>
+                  <span>•</span>
+                  <span className="text-brand-blue-900">Snowdonia</span>
+                  <span>•</span>
+                  <span className="text-brand-blue-900">Cardiff</span>
+                </>
+              )}
             </motion.div>
 
             {/* Call to Actions */}
@@ -105,7 +155,7 @@ export const Hero: React.FC = () => {
               
               {/* Secondary CTA: Red border, turns Red on hover */}
               <Link
-                to="/england-scotland-4-days"
+                to={activeRoute === 'england-scotland' ? '/england-scotland-4-days' : '/northern-ireland-to-wales'}
                 className="flex items-center justify-center gap-2 border-2 border-brand-red-600 text-brand-red-600 hover:bg-brand-red-600 hover:text-white font-bold px-7 py-3.5 rounded transition-all duration-300 w-full sm:w-auto uppercase tracking-wider text-xs hover:-translate-y-0.5 shadow-sm"
               >
                 <span>Explore Route</span>
@@ -128,7 +178,7 @@ export const Hero: React.FC = () => {
               transition={{ delay: 0.2, duration: 0.8 }}
               className="w-full h-full relative"
             >
-              <ThreeCanvas scrollProgress={scrollProgress} />
+              <ThreeCanvas scrollProgress={scrollProgress} activeRoute={activeRoute} />
             </motion.div>
           </div>
 

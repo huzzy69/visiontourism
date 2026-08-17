@@ -85,27 +85,27 @@ export const destinations: Destination[] = [
     highlights: ['Edinburgh Castle', 'Royal Mile', 'Arthur’s Seat']
   },
   {
-    id: 'cardiff',
-    name: 'Cardiff',
-    region: 'Wales',
-    description: 'The historic capital of Wales, famous for its magnificent castle, Cardiff Bay waterfront, and passion for rugby.',
-    shortDescription: 'Welsh Capital',
-    imageUrl: 'https://images.unsplash.com/photo-1549880181-56a44cf4a9a1?q=80&w=1200&auto=format&fit=crop',
-    coordinates: { x: -0.52, y: 0.08, z: 0.78 },
-    latLng: { lat: 51.4816, lng: -3.1791 },
-    featured: true,
-    highlights: ['Cardiff Castle', 'Cardiff Bay', 'National Museum Cardiff']
-  },
-  {
     id: 'belfast',
     name: 'Belfast',
     region: 'Northern Ireland',
-    description: 'The capital of Northern Ireland, known for its rich ship-building history, Titanic heritage, and lively traditional music scene.',
-    shortDescription: 'Titanic Heritage',
-    imageUrl: 'https://images.unsplash.com/photo-1552074284-5e88ef1aef18?q=80&w=1200&auto=format&fit=crop',
-    coordinates: { x: -1.30, y: 0.08, z: -0.70 },
+    description: 'The capital of Northern Ireland, rich in maritime history, vibrant culture, and entry point to the spectacular Antrim coast.',
+    shortDescription: 'Celtic Capital',
+    imageUrl: 'https://images.unsplash.com/photo-1549417229-aa67d3263c09?q=80&w=1200&auto=format&fit=crop',
+    coordinates: { x: -1.20, y: 0.08, z: -0.75 },
     latLng: { lat: 54.5973, lng: -5.9301 },
-    featured: true,
-    highlights: ['Titanic Belfast', 'Belfast City Hall', 'Crumlin Road Gaol']
+    featured: false,
+    highlights: ['Titanic Belfast', 'Cathedral Quarter', 'Cavehill Country Park']
+  },
+  {
+    id: 'cardiff',
+    name: 'Cardiff',
+    region: 'Wales',
+    description: 'The capital of Wales, offering a rich heritage of castles, modern waterfront entertainment, and Welsh cultural landmarks.',
+    shortDescription: 'Welsh Capital',
+    imageUrl: 'https://images.unsplash.com/photo-1507608869274-d3177c8bb4c7?q=80&w=1200&auto=format&fit=crop',
+    coordinates: { x: -0.52, y: 0.08, z: 0.78 },
+    latLng: { lat: 51.4816, lng: -3.1791 },
+    featured: false,
+    highlights: ['Cardiff Castle', 'Cardiff Bay', 'Principality Stadium']
   }
 ];

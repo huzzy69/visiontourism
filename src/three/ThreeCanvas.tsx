@@ -6,9 +6,10 @@ import { useMediaQuery } from '../hooks/useMediaQuery';
 
 interface ThreeCanvasProps {
   scrollProgress?: number;
+  activeRoute?: 'england-scotland' | 'northern-ireland-wales';
 }
 
-export const ThreeCanvas: React.FC<ThreeCanvasProps> = () => {
+export const ThreeCanvas: React.FC<ThreeCanvasProps> = ({ activeRoute = 'england-scotland' }) => {
   const isMobile = useMediaQuery('(max-width: 768px)');
 
   return (
@@ -58,7 +59,7 @@ export const ThreeCanvas: React.FC<ThreeCanvasProps> = () => {
 
         {/* Render the 3D UK Map Silhouette with Destination Markers */}
         <Suspense fallback={null}>
-          <UKMap />
+          <UKMap activeRoute={activeRoute} />
         </Suspense>
       </Canvas>
     </div>

@@ -128,53 +128,6 @@ export const tours: Tour[] = [
     ]
   },
   {
-    id: 'wales-northern-ireland-4-days',
-    title: 'Wales & Northern Ireland 4-Day Tour',
-    duration: '4 Days, 3 Nights',
-    durationDays: 4,
-    priceFrom: 525,
-    description: 'Journey through the historic castles of Wales, across the Irish Sea, to the stunning landscapes of Northern Ireland.',
-    longDescription: 'Experience the rich Celtic heritage and stunning natural wonders of Wales and Northern Ireland. Travel from the historic capital of Cardiff through the scenic Welsh valleys, then cross the Irish Sea to explore Belfast and the breathtaking Giant’s Causeway. A perfect combination of historic castles, vibrant culture, and dramatic coastal landscapes.',
-    highlights: [
-      'Guided tour of Cardiff Castle and South Wales heritage',
-      'Scenic drive through Snowdonia National Park in Wales',
-      'Ferry crossing over the Irish Sea to Belfast',
-      'Excursion to the legendary Giant’s Causeway and Dunluce Castle'
-    ],
-    destinationIds: ['cardiff', 'belfast'],
-    imageUrl: 'https://images.unsplash.com/photo-1549880181-56a44cf4a9a1?q=80&w=1200&auto=format&fit=crop',
-    featured: true,
-    rating: 4.9,
-    reviewsCount: 88,
-    type: 'multi-day',
-    itinerary: [
-      {
-        day: 1,
-        title: 'Cardiff & South Wales Castles',
-        description: 'Depart from Cardiff in our luxury executive minibus. Tour the historic Cardiff Castle and explore the vibrant Cardiff Bay area before dinner.',
-        stops: ['Cardiff Arrival', 'Cardiff Castle', 'Cardiff Bay']
-      },
-      {
-        day: 2,
-        title: 'Snowdonia National Park to Holyhead',
-        description: 'Travel north through the dramatic valleys of Wales. Stop for scenic walks in Snowdonia National Park, visit Conwy Castle, and proceed to Holyhead for the evening.',
-        stops: ['Snowdonia National Park', 'Conwy Castle', 'Holyhead Port']
-      },
-      {
-        day: 3,
-        title: 'Irish Sea Crossing & Belfast',
-        description: 'Take the morning ferry across the Irish Sea. Arrive in Belfast, Northern Ireland. Tour the Titanic Belfast exhibition and experience the historic city centre.',
-        stops: ['Ferry Crossing', 'Belfast Port', 'Titanic Belfast', 'Belfast City Centre']
-      },
-      {
-        day: 4,
-        title: 'Giant’s Causeway & Coastal Return',
-        description: 'Drive along the spectacular Antrim Coast Road to the legendary Giant’s Causeway. Tour the unique basalt columns and Dunluce Castle before returning to Belfast for departures.',
-        stops: ['Antrim Coast Road', 'Giant’s Causeway', 'Dunluce Castle', 'Belfast Departures']
-      }
-    ]
-  },
-  {
     id: 'custom-private-hire',
     title: 'Custom Private Group Tour & Minibus Hire',
     duration: 'Flexible (1 to 14 Days)',
@@ -195,5 +148,58 @@ export const tours: Tour[] = [
     reviewsCount: 64,
     type: 'private-custom',
     itinerary: []
+  },
+  {
+    id: 'northern-ireland-to-wales',
+    title: 'Northern Ireland to Wales Tour',
+    duration: '5 Days, 4 Nights',
+    durationDays: 5,
+    priceFrom: 595,
+    description: 'A spectacular journey crossing the Irish Sea to connect the giant landscapes of Northern Ireland with the historic castles and valleys of Wales.',
+    longDescription: 'Experience the ultimate Celtic journey. Travel from the historic streets of Belfast and the dramatic Giant’s Causeway in Northern Ireland, cross the Irish Sea, and explore the rugged mountains of Snowdonia and the historic castles of Wales. Perfect for groups, families, and travelers wishing to see the Celtic highlights in comfort.',
+    highlights: [
+      'Scenic journey from Belfast through the Irish Sea to Wales',
+      'Visit the legendary Giant’s Causeway and Titanic Belfast',
+      'Explore the breathtaking peaks of Snowdonia National Park',
+      'Tour historic Conwy Castle and the vibrant capital of Cardiff'
+    ],
+    destinationIds: ['belfast', 'cardiff'],
+    imageUrl: 'https://images.unsplash.com/photo-1507608869274-d3177c8bb4c7?q=80&w=1200&auto=format&fit=crop',
+    featured: true,
+    rating: 4.9,
+    reviewsCount: 88,
+    type: 'multi-day',
+    itinerary: [
+      {
+        day: 1,
+        title: 'Belfast Arrival & Titanic Quarter',
+        description: 'Arrive in Belfast. Tour the historic Titanic Quarter and visit Titanic Belfast, then enjoy a traditional Irish music evening in the Cathedral Quarter.',
+        stops: ['Belfast Arrival', 'Titanic Belfast', 'Cathedral Quarter']
+      },
+      {
+        day: 2,
+        title: 'Giant’s Causeway & Coastal Route',
+        description: 'Drive along the spectacular Antrim Coast Road. Walk the basalt columns of the Giant’s Causeway and visit Dunluce Castle.',
+        stops: ['Antrim Coast Road', 'Giant’s Causeway', 'Dunluce Castle']
+      },
+      {
+        day: 3,
+        title: 'Irish Sea Crossing to North Wales',
+        description: 'Board the premium ferry across the Irish Sea. Arrive in Holyhead and drive to the stunning medieval town of Conwy to tour its historic castle.',
+        stops: ['Belfast Port', 'Irish Sea Crossing', 'Holyhead', 'Conwy Castle']
+      },
+      {
+        day: 4,
+        title: 'Snowdonia National Park Exploration',
+        description: 'A full day exploring the dramatic peaks and valleys of Snowdonia. Visit the picturesque village of Betws-y-Coed and take in the panoramic mountain views.',
+        stops: ['Snowdonia Peaks', 'Betws-y-Coed', 'Llanberis Pass']
+      },
+      {
+        day: 5,
+        title: 'Cardiff Capital Tour & Departures',
+        description: 'Travel south to Cardiff, the capital of Wales. Tour Cardiff Castle and Cardiff Bay before concluding the tour.',
+        stops: ['Cardiff Castle', 'Cardiff Bay', 'Departures']
+      }
+    ]
   }
 ];

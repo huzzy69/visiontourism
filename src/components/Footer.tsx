@@ -44,6 +44,11 @@ export const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
+                <Link to="/northern-ireland-to-wales" className="hover:text-brand-red-400 transition-colors">
+                  Northern Ireland to Wales (5-Days)
+                </Link>
+              </li>
+              <li>
                 <Link to="/famous-sights" className="hover:text-brand-red-400 transition-colors">
                   Famous UK Landmarks
                 </Link>

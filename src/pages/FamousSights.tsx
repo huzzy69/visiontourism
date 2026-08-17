@@ -5,7 +5,7 @@ import { Compass } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export const FamousSights: React.FC = () => {
-  const [filterRegion, setFilterRegion] = useState<'All' | 'England' | 'Scotland' | 'Wales' | 'Northern Ireland'>('All');
+  const [filterRegion, setFilterRegion] = useState<'All' | 'England' | 'Scotland'>('All');
 
   const filteredDestinations = destinations.filter((dest) => {
     if (filterRegion === 'All') return true;
@@ -24,7 +24,7 @@ export const FamousSights: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Region Filter Buttons */}
         <div className="flex justify-center items-center gap-3 mb-16">
-          {(['All', 'England', 'Scotland', 'Wales', 'Northern Ireland'] as const).map((region) => (
+          {(['All', 'England', 'Scotland'] as const).map((region) => (
             <button
               key={region}
               onClick={() => setFilterRegion(region)}

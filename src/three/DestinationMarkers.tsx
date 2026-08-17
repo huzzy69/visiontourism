@@ -40,15 +40,15 @@ export const HERO_DESTINATIONS: MapDestination[] = [
     position: [-0.32, 0.77, -1.48],
   },
   {
-    id: 'cardiff',
-    name: 'Cardiff',
-    position: [-0.52, 0.77, 0.78],
+    id: 'belfast',
+    name: 'Northern Ireland',
+    position: [-1.20, 0.77, -0.75],
   },
   {
-    id: 'belfast',
-    name: 'Belfast',
-    position: [-1.30, 0.77, -0.70],
-  },
+    id: 'cardiff',
+    name: 'Wales',
+    position: [-0.52, 0.77, 0.78],
+  }
 ];
 
 interface MarkerProps {
@@ -152,10 +152,23 @@ const DestinationMarker: React.FC<MarkerProps> = ({ destination }) => {
   );
 };
 
-export const DestinationMarkers: React.FC = () => {
+interface DestinationMarkersProps {
+  activeRoute?: 'england-scotland' | 'northern-ireland-wales';
+}
+
+const ROUTE_MAP: Record<string, string[]> = {
+  'england-scotland': ['london', 'oxford', 'manchester', 'lake-district', 'glasgow', 'edinburgh'],
+  'northern-ireland-wales': ['belfast', 'cardiff'],
+};
+
+export const DestinationMarkers: React.FC<DestinationMarkersProps> = ({ activeRoute = 'england-scotland' }) => {
+  const visibleDestinations = HERO_DESTINATIONS.filter((dest) =>
+    ROUTE_MAP[activeRoute]?.includes(dest.id)
+  );
+
   return (
     <group>
-      {HERO_DESTINATIONS.map((dest) => (
+      {visibleDestinations.map((dest) => (
         <DestinationMarker key={dest.id} destination={dest} />
       ))}
     </group>

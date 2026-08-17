@@ -89,34 +89,21 @@ const gbOutlineCoordinates: [number, number][] = [
   [-1.40, 1.45],  // Back to Land's End
 ];
 
-// Geographically accurate outline coordinates of the Island of Ireland (normalized 2D silhouette)
-const irelandOutlineCoordinates: [number, number][] = [
-  [-1.30, -0.80],  // NE Coast (Larne)
-  [-1.25, -0.70],  // Belfast Lough
-  [-1.35, -0.60],  // Down Coast
-  [-1.32, -0.40],  // Dundalk Bay
-  [-1.35, -0.20],  // Dublin Coast
-  [-1.32, 0.10],   // Wicklow Coast
-  [-1.38, 0.40],   // Wexford Coast
-  [-1.45, 0.65],   // Carnsore Point (SE Tip)
-  [-1.65, 0.70],   // Waterford Coast
-  [-1.85, 0.78],   // Cork Coast
-  [-2.05, 0.85],   // Mizen Head (SW Tip)
-  [-2.15, 0.60],   // Kenmare / Kerry Peninsulas
-  [-2.18, 0.35],   // Dingle Peninsula
-  [-2.00, 0.20],   // Shannon Estuary
-  [-2.15, 0.05],   // Loop Head / Co. Clare
-  [-2.10, -0.15],  // Galway Bay
-  [-2.20, -0.30],  // Connemara Coast
-  [-2.12, -0.55],  // Clew Bay / Mayo
-  [-1.95, -0.72],  // Sligo Bay
-  [-1.85, -0.85],  // Donegal Coast
-  [-1.65, -0.98],  // Bloody Foreland
-  [-1.48, -1.02],  // Malin Head (Northernmost Tip)
-  [-1.38, -0.92],  // Lough Foyle
+// Stylized outline coordinates for Northern Ireland
+const niOutlineCoordinates: [number, number][] = [
+  [-1.45, -0.95],
+  [-1.20, -0.95],
+  [-1.05, -0.75],
+  [-1.15, -0.55],
+  [-1.40, -0.55],
+  [-1.50, -0.75],
 ];
 
-export const UKMap: React.FC = () => {
+interface UKMapProps {
+  activeRoute?: 'england-scotland' | 'northern-ireland-wales';
+}
+
+export const UKMap: React.FC<UKMapProps> = ({ activeRoute = 'england-scotland' }) => {
   const mapGroupRef = useRef<THREE.Group>(null);
 
   // Construct precise THREE.Shape from coordinates
@@ -133,9 +120,9 @@ export const UKMap: React.FC = () => {
     return s;
   }, []);
 
-  const irelandShape = useMemo(() => {
+  const niShape = useMemo(() => {
     const s = new THREE.Shape();
-    irelandOutlineCoordinates.forEach(([x, y], idx) => {
+    niOutlineCoordinates.forEach(([x, y], idx) => {
       if (idx === 0) {
         s.moveTo(x, y);
       } else {
@@ -178,28 +165,26 @@ export const UKMap: React.FC = () => {
         <meshStandardMaterial attach="material-1" color="#1E3A8A" roughness={0.4} metalness={0.7} />
       </mesh>
 
-      {/* Extruded Ireland Silhouette Map */}
+      {/* Extruded Northern Ireland Silhouette Map */}
       <mesh
         rotation={[-Math.PI / 2, 0, 0]}
-        position={[0, 0.5, 0]}
+        position={[0, 0.5, 0]} // Shift slightly upward to center in perspective
         castShadow
         receiveShadow
       >
-        <extrudeGeometry args={[irelandShape, extrudeSettings]} />
-        {/* material-0: Lighter Royal Blue top face */}
+        <extrudeGeometry args={[niShape, extrudeSettings]} />
         <meshStandardMaterial attach="material-0" color="#2563EB" roughness={0.3} metalness={0.5} />
-        {/* material-1: Darker Deep Navy Blue side extrusion */}
         <meshStandardMaterial attach="material-1" color="#1E3A8A" roughness={0.4} metalness={0.7} />
       </mesh>
 
       {/* 3D Destination Markers attached to 3D UK map */}
-      <DestinationMarkers />
+      <DestinationMarkers activeRoute={activeRoute} />
 
       {/* Bold Travel Route Lines */}
-      <RouteLines />
+      <RouteLines activeRoute={activeRoute} />
 
       {/* 3D Passenger Minibus traveling on the route */}
-      <VehicleModel />
+      <VehicleModel activeRoute={activeRoute} />
     </group>
   );
 };
